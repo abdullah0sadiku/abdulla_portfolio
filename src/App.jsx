@@ -359,7 +359,7 @@ const badges = [
             <div className="flex justify-center">
               <div className="w-80 h-80 bg-gradient-to-br from-stone-700 to-stone-200  flex items-center justify-center">
                 <img
-                  src="abdulla_portfolio/images/dulla-04.png"
+                  src="/images/dulla-04.png"
                   alt=""
                   className="w-80 h-80  object-cover shadow-lg"
                 />
