@@ -32,6 +32,30 @@ function App() {
     setIsMenuOpen(false);
   };
 
+  // 
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "bae298c3-69be-48fc-a10e-91797b9dbd0c");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
+
+    if (res.success) {
+      console.log("Success", res);
+    }
+  };
+
   // Track active section on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -569,11 +593,12 @@ const badges = [
             </div>
             <Card className="bg-white border-gray-300 shadow-lg">
               <CardContent className="p-6">
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={onSubmit}>
                   <div>
                     <label className="block text-sm font-medium mb-2">Name</label>
                     <input 
                       type="text" 
+                      name="name" // Added name attribute
                       className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
                       placeholder="Your name"
                     />
@@ -582,6 +607,7 @@ const badges = [
                     <label className="block text-sm font-medium mb-2">Email</label>
                     <input 
                       type="email" 
+                      name="email" // Added name attribute
                       className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
                       placeholder="your.email@example.com"
                     />
@@ -590,6 +616,7 @@ const badges = [
                     <label className="block text-sm font-medium mb-2">Message</label>
                     <textarea 
                       rows={4}
+                      name="message" // Added name attribute
                       className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
                       placeholder="Your message..."
                     ></textarea>
