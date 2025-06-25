@@ -22,6 +22,7 @@ import './App.css';
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [messageSent, setMessageSent] = useState(false);
 
   // Smooth scroll to section
   const scrollToSection = (sectionId) => {
@@ -52,9 +53,18 @@ function App() {
     }).then((res) => res.json());
 
     if (res.success) {
-      console.log("Success", res);
+      setMessageSent(true);
     }
   };
+
+  useEffect(() => {
+    if (messageSent) {
+      const timer = setTimeout(() => {
+        window.location.reload();
+      }, 2000); // 2 seconds before refresh
+      return () => clearTimeout(timer);
+    }
+  }, [messageSent]);
 
   // Track active section on scroll
   useEffect(() => {
@@ -593,6 +603,11 @@ const badges = [
             </div>
             <Card className="bg-white border-gray-300 shadow-lg">
               <CardContent className="p-6">
+                {messageSent && (
+                  <div className="mb-4 p-3 rounded bg-green-100 text-green-800 text-center font-semibold">
+                    Message sent successfully!
+                  </div>
+                )}
                 <form className="space-y-4" onSubmit={onSubmit}>
                   <div>
                     <label className="block text-sm font-medium mb-2">Name</label>
