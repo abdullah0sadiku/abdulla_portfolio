@@ -406,18 +406,18 @@ const badges = [
                 key={badge.name}
                 className="bg-slate-700 border-slate-600 transition-transform duration-300 ease-in-out hover:scale-102 "
               >
-                <CardContent className="flex flex-row items-center p-6">
+                <CardContent className="flex flex-col md:flex-row items-center p-6">
                   <img
                     src={badge.image}
                     alt={badge.name}
-                    className="w-36 h-36 object-contain rounded-full mr-6"
+                    className="w-36 h-36 object-contain rounded-full mb-4 md:mb-0 md:mr-6"
                   />
-                  <div className="flex-1">
+                  <div className="flex-1 text-center md:text-left">
                     <h3 className="text-xl text-white font-semibold mb-1">{badge.name}</h3>
                     {badge.description && (
                       <p className="text-gray-300 mb-3">{badge.description}</p>
                     )}
-                    <div className="flex flex-wrap gap-2 mb-3">
+                    <div className="flex flex-wrap gap-2 mb-3 justify-center md:justify-start">
                       {badge.skills && badge.skills.map((skill, i) => (
                         <span
                           key={i}
@@ -427,7 +427,7 @@ const badges = [
                         </span>
                       ))}
                     </div>
-                    <div className="flex gap-3 mt-2">
+                    <div className="flex gap-3 mt-2 justify-center md:justify-start">
                       <a
                         href={badge.link}
                         target="_blank"
@@ -436,7 +436,13 @@ const badges = [
                       >
                         <ExternalLink size={18} /> View
                       </a>
-                      
+                      <a
+                        href={badge.link}
+                        download
+                        className="px-4 py-2 bg-slate-600 text-white rounded shadow hover:bg-slate-700 transition flex items-center gap-2"
+                      >
+                        <Download size={18} /> Download
+                      </a>
                     </div>
                   </div>
                 </CardContent>
