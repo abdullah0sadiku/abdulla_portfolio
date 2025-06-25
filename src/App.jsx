@@ -183,7 +183,7 @@ function App() {
 const badges = [
   {
     name: "Databricks Certified Data Engineer Associate",
-    image: "src/assets/badges/associate-badge-de.png",
+    image: "images/badges/associate-badge-de.png",
     link: "https://credentials.databricks.com/fb08771c-d2a1-47d8-ac5c-455ed3b68d91#acc.nm3XpwNK",
     skills: [
     "Apache Spark",
