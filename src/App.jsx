@@ -183,7 +183,7 @@ function App() {
 const badges = [
   {
     name: "Databricks Certified Data Engineer Associate",
-    image: "images/badges/associate-badge-de.png",
+    image: "/images/badges/associate-badge-de.png",
     link: "https://credentials.databricks.com/fb08771c-d2a1-47d8-ac5c-455ed3b68d91#acc.nm3XpwNK",
     skills: [
     "Apache Spark",
@@ -359,7 +359,7 @@ const badges = [
             <div className="flex justify-center">
               <div className="w-80 h-80 bg-gradient-to-br from-stone-700 to-stone-200  flex items-center justify-center">
                 <img
-                  src="dULLA-04.png"
+                  src="abdulla_portfolio/public/dULLA-04.png"
                   alt=""
                   className="w-80 h-80  object-cover shadow-lg"
                 />
