@@ -183,7 +183,7 @@ function App() {
 const badges = [
   {
     name: "Databricks Certified Data Engineer Associate",
-    image: "/images/badges/associate-badge-de.png",
+    image: "images/badges/associate-badge-de.png",
     link: "https://credentials.databricks.com/fb08771c-d2a1-47d8-ac5c-455ed3b68d91#acc.nm3XpwNK",
     skills: [
     "Apache Spark",
@@ -199,7 +199,7 @@ const badges = [
   },
   {
     name: "Apache Airflow 3 Fundamentals",
-    image: "src/assets/badges/astronomer.png",
+    image: "images/badges/astronomer.png",
     link: "https://www.credly.com/badges/640f5ca8-9552-45ab-a44c-a8025ad55f58/linked_in_profile",
     skills: ["Apache Airflow",
     "DAGs",
@@ -209,7 +209,7 @@ const badges = [
   },
   {
     name: "Apache Airflow 2 Fundamentals",
-    image: "src/assets/badges/astronomer1.png",
+    image: "images/badges/astronomer1.png",
     link: "https://www.credly.com/badges/b5abf137-8740-4f21-8606-f74e72987cf2/linked_in_profile",
     skills: ["Apache Airflow",
     "DAGs",
@@ -219,13 +219,13 @@ const badges = [
   },
   {
     name: "PCAP Python Essentials",
-    image: "src/assets/badges/python.png",
+    image: "images/badges/python.png",
     link: "src/assets/badges/pcap.png",
     skills: ["Python", "Programming", "Data Structures", "Algorithms", "Object-Oriented Programming"]
   },
   {
     name: "IT Essentials - Cisco",
-    image: "src/assets/badges/ITE.png",
+    image: "images/badges/ITE.png",
     link: "https://www.credly.com/badges/376c2f14-eb49-40ba-9671-a688b44fdd39/public_url",
     skills: ["Computer Hardware",
     "Laptops",
