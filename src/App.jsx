@@ -166,7 +166,7 @@ function App() {
       description: "Simple landing page portfolio showcasing my skills, projects, and contact information. Built with ReactJS and TailwindCSS for a modern look.",
       technologies: ["ReactJS", "TailwindCSS"],
       status: "Completed",
-      githubUrl: "https://github.com/abdullah0sadiku/Student-Gradebook-Manager"
+      githubUrl: "https://github.com/abdullah0sadiku/abdulla_portfolio"
     },
     {
       title: "Reports Checkpoint",
