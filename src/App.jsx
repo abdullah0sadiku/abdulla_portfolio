@@ -428,7 +428,6 @@ const badges = [
                 ))}
               </div>
             </div>
-            
           </div>
         </div>
       </section>
@@ -589,20 +588,18 @@ const badges = [
         </div>
       </section>
       
-      <section id="gallery" className="py-20 bg-gray-100 text-gray-900">
+      <section id="gallery" className="py-20 bg-gradient-to-b from-gray-300 to-white text-gray-900">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Gallery</h2>
           <div className="p-6"> {/* Add some padding around your gallery */}
-            <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1200: 4 }}>
+            <ResponsiveMasonry columnsCountBreakPoints={{ 0: 2, 750: 2, 900: 3, 1200: 4 }}>
               <Masonry gutter="36px"> {/* Add gutter for spacing between images */}
                 {imagePaths.map((imageSrc, index) => (
                   <div key={index} className="bg-white shadow-lg overflow-hidden">
                     <img
                       src={imageSrc}
                       alt={`img${index + 1}.JPG`}
-                      // No fixed height or object-cover needed here typically,
-                      // Masonry handles the height based on aspect ratio
-                      style={{ width: '100%', display: 'block'}} // Basic image styling
+                      style={{ width: '100%', display: 'block' }}
                     />
                   </div>
                 ))}
@@ -612,7 +609,7 @@ const badges = [
         </div>
       </section>
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-100 text-gray-900">
+      <section id="contact" className="py-20 bg-gradient-to-t from-gray-300 to-white text-gray-900">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
           <div className="grid md:grid-cols-2 gap-12">
