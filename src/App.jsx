@@ -381,7 +381,7 @@ const badges = [
                className="text-gray-400 hover:text-white transition-colors">
               <Linkedin size={32} />
             </a>
-            <a href="www.instagram.com/abdulla.sadiku" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.instagram.com/abdulla.sadiku" target="_blank" rel="noopener noreferrer"
                className="text-gray-400 hover:text-white transition-colors">
               <Instagram size={32} />
             </a>
