@@ -27,9 +27,10 @@ function App() {
   const [messageSent, setMessageSent] = useState(false);
   // Import all images in the gallery folder
 
-const imagePaths = Array.from({ length: 24 }).map((_, index) =>
+  const imagePaths = Array.from({ length: 24 }).map((_, index) =>
     `/abdulla_portfolio/images/gallery/img${index + 1}.JPG`
   );
+
   // Smooth scroll to section
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -41,7 +42,7 @@ const imagePaths = Array.from({ length: 24 }).map((_, index) =>
 
   const onClickDownload = () => {
     const link = document.createElement('a');
-    link.href = 'src/assets/resume/Resume Abdulla Sadiku.docx'; 
+    link.href = 'resume/resume.docx'; 
     link.download = 'Abdulla_Sadiku_Resume.docx';
     document.body.appendChild(link);
     link.click();
