@@ -39,15 +39,7 @@ const imagePaths = Array.from({ length: 24 }).map((_, index) =>
     setIsMenuOpen(false);
   };
 
-  const onClickDownload = () => {
-    const link = document.createElement('a');
-    link.href = 'resume/Resume Abdulla Sadiku.docx'; 
-    link.download = 'Abdulla_Sadiku_Resume.docx';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
+  
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -614,7 +606,17 @@ const badges = [
           <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6 flex flex-row justify-between">Let's Connect  <Button onClick={onClickDownload}> <Download size={12} /> Download CV</Button> </h3>
+              <h3 className="text-2xl font-semibold mb-6 flex flex-row justify-between">
+                Let's Connect  
+                <Button> <Download size={12} /> <a
+                  href="resume/resume.docx"
+                  download="Abdulla_Sadiku_Resume.docx"
+                  className="inline-block py-2 text-white"
+                >
+                  Download Resume
+                </a>
+                </Button> 
+                </h3>
               <p className="text-lg text-gray-700 mb-6">
                 I'm always interested in new opportunities and collaborations. Whether you have a project in mind or just want to chat about technology, 
                 feel free to reach out!
