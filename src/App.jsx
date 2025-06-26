@@ -398,35 +398,45 @@ const badges = [
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white  text-gray-900">
+      <section id="about" className="py-20 bg-white text-gray-900">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            {/* Image + Text Container (Left 50%) */}
+            <div className="flex flex-col h-full">
+              <div className="flex flex-row items-start gap-5">
+                <img
+                  src="images/dulla-04.png"
+                  alt=""
+                  className="w-32 h-32 object-cover rounded-lg shadow-lg bg-gradient-to-br from-slate-900 to-stone-400"
+                  style={{ zIndex: 2 }}
+                />
+                <span className="text-lg text-gray-700 mt-1">
+                  My name is Abdulla Sadiku, a passionate Computer Science student with a focus on Data Engineering and Full-Stack Web Development. I love solving real-world problems through technology and am always eager to learn new skills.
+                </span>
+              </div>
+              <div className="mt-4 text-lg text-gray-700">
+                Born in Gjilan, Kosovo, I have a strong background in Python scripting, web development, and data engineering. Currently, I am interning at XponentL Data (a Genpact company), where I work with tools like Databricks, Airflow 3, SQL, dbt, and Azure Cloud.
+              </div>
+            </div>
+            {/* Info Container (Right 50%) */}
+            <div className="flex flex-col justify-center">
               <p className="text-lg text-gray-700 mb-6">
                 Motivated and detail-oriented Computer Science student with hands-on experience in Data Engineering, Full-Stack Web Development, and Python scripting. Currently interning at XponentL Data (a Genpact company), where I work with tools like Databricks, Airflow 3, SQL, dbt, and Azure Cloud.
               </p>
-              <p className="text-lg text-gray-700 mb-6 align-justify">
+              <p className="text-lg text-gray-700 mb-6">
                 I completed a 6-month bootcamp in Full-Stack Web Development and have a strong 
                 background in debugging, open-source contribution, and delivering clean, scalable code. 
                 I'm passionate about solving real-world problems through technology, with growing 
                 interest in AI and cloud-native solutions.
               </p>
+              
               <div className="flex flex-wrap gap-2">
                 {certifications.map((cert, index) => (
-                  <Badge key={index} variant="primary" className="px-2 py-1 text-xs bg-slate-600 text-slate-200 rounded shadow">
+                  <span key={index} className="px-2 py-1 text-xs bg-slate-600 text-slate-200 rounded shadow">
                     {cert}
-                  </Badge>
+                  </span>
                 ))}
-              </div>
-            </div>
-            <div className="flex justify-center">
-              <div className="w-80 h-80 bg-gradient-to-br from-stone-700 to-stone-200  flex items-center justify-center">
-                <img
-                  src="images/dulla-04.png"
-                  alt=""
-                  className="w-80 h-80  object-cover shadow-lg"
-                />
               </div>
             </div>
           </div>
