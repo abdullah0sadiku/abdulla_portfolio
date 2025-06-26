@@ -35,8 +35,8 @@ function App() {
 
   const onClickDownload = () => {
     const link = document.createElement('a');
-    link.href = 'abdulla_portfolio/resume/Resume Abdulla Sadiku.docx'; 
-    link.download = 'Abdulla_Sadiku_Resume.pdf';
+    link.href = 'src/assets/resume/Resume Abdulla Sadiku.docx'; 
+    link.download = 'Abdulla_Sadiku_Resume.docx';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
