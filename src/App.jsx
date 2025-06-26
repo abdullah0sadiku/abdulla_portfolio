@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge.jsx';
 import { 
   Github, 
   Linkedin, 
+  Instagram,
   Mail, 
   Phone, 
   MapPin, 
@@ -18,12 +19,17 @@ import {
   X
 } from 'lucide-react';
 import './App.css';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [messageSent, setMessageSent] = useState(false);
+  // Import all images in the gallery folder
 
+const imagePaths = Array.from({ length: 24 }).map((_, index) =>
+    `/abdulla_portfolio/images/gallery/img${index + 1}.JPG`
+  );
   // Smooth scroll to section
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -217,7 +223,8 @@ function App() {
     "Apache Airflow 2 & 3 Fundamentals",
     "IT Essentials - Cisco",
     "Full-Stack Web Developer",
-    "PCAP - Programming Essentials in Python"
+    "PCAP - Programming Essentials in Python",
+    "Neo4J Certified Professional",
   ];
   
   // Place this above your return statement
@@ -235,6 +242,16 @@ const badges = [
     "Delta Live Tables",
     "Data Pipelines",
     "ETL",
+    "Production",
+    "SQL",
+    "Python"]
+  },
+  {
+    name: "Neo4j Certified Professional",
+    image: "images/badges/neo4j.png",
+    link: "https://graphacademy.neo4j.com/c/571f17f2-8e69-4e56-ac94-625aaca94022/",
+    skills: [
+    "Cypher",
     "Production",
     "SQL",
     "Python"]
@@ -262,7 +279,7 @@ const badges = [
   {
     name: "PCAP Python Essentials",
     image: "images/badges/python.png",
-    link: "src/assets/badges/pcap.png",
+    link: "https://www.linkedin.com/in/abdulla-sadiku-751384291/details/certifications/1748038504484/single-media-viewer?type=DOCUMENT&profileId=ACoAAEa2Wy0BdoB8q1eyLliZsqX3FI-NxnDVHqo&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BDXTc2lX%2FQZmIXidnh%2F9gAA%3D%3D",
     skills: ["Python", "Programming", "Data Structures", "Algorithms", "Object-Oriented Programming"]
   },
   {
@@ -292,12 +309,12 @@ const badges = [
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              {['home', 'about', 'skills', 'experience', 'projects', 'contact'].map((item) => (
+              {['home', 'about', 'skills', 'experience', 'projects','gallery','contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
                   className={`capitalize hover:text-orange-400 transition-colors ${
-                    activeSection === item ? 'text-neutral-400' : 'text-gray-300'
+                    activeSection === item ? 'text-orange-400' : 'text-gray-300'
                   }`}
                 >
                   {item}
@@ -317,7 +334,7 @@ const badges = [
           {/* Mobile Navigation */}
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t border-gray-800">
-              {['home', 'about', 'skills', 'experience', 'projects', 'contact'].map((item) => (
+              {['home', 'about', 'skills', 'experience', 'projects','gallery','contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -333,7 +350,7 @@ const badges = [
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-400/20 to-salte-200/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 to-stone-600"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-100 to-white bg-clip-text text-transparent">
             Abdulla Sadiku
@@ -364,10 +381,14 @@ const badges = [
                className="text-gray-400 hover:text-white transition-colors">
               <Linkedin size={32} />
             </a>
+            <a href="www.instagram.com/abdulla.sadiku" target="_blank" rel="noopener noreferrer"
+               className="text-gray-400 hover:text-white transition-colors">
+              <Instagram size={32} />
+            </a>
           </div>
           <Button 
             onClick={() => scrollToSection('about')}
-            className="bg-slate-300 hover:bg-slate-900 hover:shadow-sm hover:shadow-white/20 text-slate-900 hover:text-slate-100 px-8 py-3 rounded-full font-semibold transition-colors"
+            className="bg-gradient-to-br from-slate-300 to-slate-400 hover:from-slate-900  text-slate-900 hover:text-slate-100 px-8 py-3 rounded-sm font-semibold transition-colors"
           >
             Learn More
             <ChevronDown className="ml-2" size={20} />
@@ -412,7 +433,7 @@ const badges = [
       </section>
 
       {/* Skills & Badges Section */}
-      <section id="skills" className="py-20 bg-slate-800">
+      <section id="skills" className="py-20 bg-gradient-to-br from-slate-700 to-neutral-900 text-white">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Skills & Technologies & Badges</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -521,7 +542,7 @@ const badges = [
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-slate-800">
+      <section id="projects" className="py-20 bg-gradient-to-br from-neutral-700 to-slate-900">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -566,7 +587,29 @@ const badges = [
           </div>
         </div>
       </section>
-
+      
+      <section id="gallery" className="py-20 bg-gray-100 text-gray-900">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">Gallery</h2>
+          <div className="p-6"> {/* Add some padding around your gallery */}
+            <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1200: 4 }}>
+              <Masonry gutter="36px"> {/* Add gutter for spacing between images */}
+                {imagePaths.map((imageSrc, index) => (
+                  <div key={index} className="bg-white shadow-lg overflow-hidden">
+                    <img
+                      src={imageSrc}
+                      alt={`img${index + 1}.JPG`}
+                      // No fixed height or object-cover needed here typically,
+                      // Masonry handles the height based on aspect ratio
+                      style={{ width: '100%', display: 'block'}} // Basic image styling
+                    />
+                  </div>
+                ))}
+              </Masonry>
+            </ResponsiveMasonry>
+          </div>
+        </div>
+      </section>
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-100 text-gray-900">
         <div className="max-w-4xl mx-auto px-4">
@@ -600,6 +643,10 @@ const badges = [
                 <a href="https://www.linkedin.com/in/abdulla-sadiku-751384291/" target="_blank" rel="noopener noreferrer"
                    className="text-gray-400 hover:text-slate-950 transition-colors">
                   <Linkedin size={24} />
+                </a>
+                <a href="www.instagram.com/abdulla.sadiku" target="_blank" rel="noopener noreferrer"
+                   className="text-gray-400 hover:text-slate-950 transition-colors">
+                  <Instagram size={24} />
                 </a>
               </div>
             </div>
