@@ -33,7 +33,15 @@ function App() {
     setIsMenuOpen(false);
   };
 
-  // 
+  const onClickDownload = () => {
+    const link = document.createElement('a');
+    link.href = 'abdulla_portfolio/resume/Resume Abdulla Sadiku.docx'; 
+    link.download = 'Abdulla_Sadiku_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -470,13 +478,7 @@ const badges = [
                       >
                         <ExternalLink size={18} /> View
                       </a>
-                      <a
-                        href={badge.link}
-                        download
-                        className="px-4 py-2 bg-slate-600 text-white rounded shadow hover:bg-slate-700 transition flex items-center gap-2"
-                      >
-                        <Download size={18} /> Download
-                      </a>
+                      
                     </div>
                   </div>
                 </CardContent>
@@ -571,7 +573,7 @@ const badges = [
           <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-semibold mb-6 flex flex-row justify-between">Let's Connect  <Button onClick={onClickDownload}> <Download size={12} /> Download CV</Button> </h3>
               <p className="text-lg text-gray-700 mb-6">
                 I'm always interested in new opportunities and collaborations. Whether you have a project in mind or just want to chat about technology, 
                 feel free to reach out!
@@ -616,6 +618,7 @@ const badges = [
                       name="name" // Added name attribute
                       className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
                       placeholder="Your name"
+                      required
                     />
                   </div>
                   <div>
@@ -625,6 +628,7 @@ const badges = [
                       name="email" // Added name attribute
                       className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
                       placeholder="your.email@example.com"
+                      required
                     />
                   </div>
                   <div>
@@ -634,6 +638,7 @@ const badges = [
                       name="message" // Added name attribute
                       className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
                       placeholder="Your message..."
+                      required
                     ></textarea>
                   </div>
                   <Button className="w-full bg-yellow-500 hover:bg-orange-500 text-slate-900 font-semibold transition-colors">
