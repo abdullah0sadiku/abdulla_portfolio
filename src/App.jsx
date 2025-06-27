@@ -39,7 +39,15 @@ const imagePaths = Array.from({ length: 24 }).map((_, index) =>
     setIsMenuOpen(false);
   };
 
-  
+  const onClickDownload = () => {
+    const link = document.createElement('a');
+    link.href = 'resume/Resume Abdulla Sadiku.docx'; 
+    link.download = 'Abdulla_Sadiku_Resume.docx';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -580,18 +588,20 @@ const badges = [
         </div>
       </section>
       
-      <section id="gallery" className="py-20 bg-gradient-to-b from-gray-300 to-white text-gray-900">
+      <section id="gallery" className="py-20 bg-gray-100 text-gray-900">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Gallery</h2>
           <div className="p-6"> {/* Add some padding around your gallery */}
-            <ResponsiveMasonry columnsCountBreakPoints={{ 0: 2, 750: 2, 900: 3, 1200: 4 }}>
+            <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1200: 4 }}>
               <Masonry gutter="36px"> {/* Add gutter for spacing between images */}
                 {imagePaths.map((imageSrc, index) => (
                   <div key={index} className="bg-white shadow-lg overflow-hidden">
                     <img
                       src={imageSrc}
                       alt={`img${index + 1}.JPG`}
-                      style={{ width: '100%', display: 'block' }}
+                      // No fixed height or object-cover needed here typically,
+                      // Masonry handles the height based on aspect ratio
+                      style={{ width: '100%', display: 'block'}} // Basic image styling
                     />
                   </div>
                 ))}
@@ -600,23 +610,14 @@ const badges = [
           </div>
         </div>
       </section>
+    
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-t from-gray-300 to-white text-gray-900">
+      <section id="contact" className="py-20 bg-gray-100 text-gray-900">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6 flex flex-row justify-between">
-                Let's Connect  
-                <Button> <Download size={12} /> <a
-                  href="resume/resume.docx"
-                  download="Abdulla_Sadiku_Resume.docx"
-                  className="inline-block py-2 text-white"
-                >
-                  Download Resume
-                </a>
-                </Button> 
-                </h3>
+              <h3 className="text-2xl font-semibold mb-6 flex flex-row justify-between">Let's Connect  <Button onClick={onClickDownload}> <Download size={12} /> Download CV</Button> </h3>
               <p className="text-lg text-gray-700 mb-6">
                 I'm always interested in new opportunities and collaborations. Whether you have a project in mind or just want to chat about technology, 
                 feel free to reach out!
