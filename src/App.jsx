@@ -75,7 +75,7 @@ const imagePaths = Array.from({ length: 24 }).map((_, index) =>
     if (messageSent) {
       const timer = setTimeout(() => {
         window.location.reload();
-      }, 2000); // 2 seconds before refresh
+      }, 1000); // 2 seconds before refresh
       return () => clearTimeout(timer);
     }
   }, [messageSent]);
@@ -83,7 +83,7 @@ const imagePaths = Array.from({ length: 24 }).map((_, index) =>
   // Track active section on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'experience', 'projects','gallery', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
