@@ -25,9 +25,11 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [messageSent, setMessageSent] = useState(false);
-  // Import all images in the gallery folder
+  const [videoLangIndexes, setVideoLangIndexes] = useState({});
+  const langDisplay = { ar: "Arabic", en: "English", shq: "Shqip" };
 
-const imagePaths = Array.from({ length: 24 }).map((_, index) =>
+
+  const imagePaths = Array.from({ length: 24 }).map((_, index) =>
     `/abdulla_portfolio/images/gallery/img${index + 1}.JPG`
   );
   // Smooth scroll to section
@@ -166,6 +168,8 @@ const imagePaths = Array.from({ length: 24 }).map((_, index) =>
       technologies: ["Laravel 10&11", "PHP", "MySQL", "WebRTC"],
       status: "In Progress",
       period: "Oct 2024 - Present",
+      lang: ['ar','en','shq'],
+      videoUrl: ["https://www.youtube.com/embed/jvK4l1OeMuk?si=MqQiDw8JZaXpdzn-","https://www.youtube.com/embed/JJRF5nf_zoM?si=0HdhnPrFaiqtSKK1","https://www.youtube.com/embed/rya_ugRICvs?si=ujUkHinycpQgBN2c"],
       githubUrl: "https://github.com/abdullah0sadiku/Al-Kurra_School"
     },
     {
@@ -187,6 +191,8 @@ const imagePaths = Array.from({ length: 24 }).map((_, index) =>
       description: "A Python-based reporting system for generating and managing various types of reports. Includes data processing, visualization, and automated report generation features.",
       technologies: ["Python", "Data Processing"],
       status: "Completed",
+      lang: ['ar','en','shq'],
+      videoUrl: ["https://www.youtube.com/embed/1b0d2c4f8e4","https://www.youtube.com/embed/1b0d2c4f8e4","https://www.youtube.com/embed/1b0d2c4f8e4"],
       githubUrl: "https://github.com/abdullah0sadiku/Reports_Checkpoint"
     },
     {
@@ -350,7 +356,7 @@ const badges = [
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 to-stone-600"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 to-stone-400"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-100 to-white bg-clip-text text-transparent">
             Abdulla Sadiku
@@ -394,10 +400,11 @@ const badges = [
             <ChevronDown className="ml-2" size={20} />
           </Button>
         </div>
+
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white  text-gray-900">
+      <section id="about" className="py-20 bg-gradient-to-l from-slate-300 to-white text-gray-900">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -495,7 +502,7 @@ const badges = [
                         href={badge.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 bg-slate-600 text-white rounded shadow hover:bg-slate-700 transition flex items-center gap-2"
+                        className="px-4 py-2 bg-slate-600 text-white rounded shadow hover:bg-slate-300 hover:text-slate-950 transition flex items-center gap-2"
                       >
                         <ExternalLink size={18} /> View
                       </a>
@@ -545,49 +552,92 @@ const badges = [
       <section id="projects" className="py-20 bg-gradient-to-br from-neutral-700 to-slate-900">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card  key={index}  className="bg-slate-700 border-slate-600 transition-transform duration-300 ease-in-out hover:border-slate-200 hover:scale-102">
-                <CardContent className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-semibold text-yellow-500">{project.title}</h3>
-                    <div className="flex gap-2">
-                      <Badge 
-                        variant={project.status === 'Completed' ? 'default' : 'secondary'}
-                        className={project.status === 'Completed' ? 'bg-green-600' : 'bg-yellow-600'}
-                      >
-                        {project.status}
-                      </Badge>
-                      {project.githubUrl && (
-                        <a 
-                          href={project.githubUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-orange-400 hover:text-orange-300 transition-colors"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => {
+            // Only show dropdown if project has videoUrl as array and lang
+            const hasVideo = Array.isArray(project.videoUrl) && Array.isArray(project.lang);
+            const selectedLangIdx = videoLangIndexes[index] || 0;
+            return (
+              <Card
+                key={index}
+                className={`bg-slate-700 border-slate-600 transition-transform duration-300 ease-in-out  hover:scale-102 
+                ${hasVideo ? 'md:col-span-2 lg:col-span-2' : ''}`}
+              >
+                <CardContent className={`p-4 ${hasVideo ? 'flex flex-col md:flex-row gap-4 items-start' : ''}`}>
+                  <div className={`${hasVideo ? 'w-full md:w-1/2' : ''}`}>
+                    {/* ...existing project info... */}
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="text-xl font-semibold text-yellow-500">{project.title}</h3>
+                      <div className="flex gap-2">
+                        <Badge
+                          variant={project.status === 'Completed' ? 'default' : 'secondary'}
+                          className={project.status === 'Completed' ? 'bg-green-600' : 'bg-yellow-600'}
                         >
-                          <ExternalLink size={16} />
-                        </a>
-                      )}
+                          {project.status}
+                        </Badge>
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-orange-400 hover:text-orange-300 transition-colors"
+                          >
+                            <ExternalLink size={16} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                    {project.period && (
+                      <p className="text-sm text-gray-400 mb-3">{project.period}</p>
+                    )}
+                    <p className="text-gray-300 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Badge key={techIndex} variant="outline" className="border-gray-600 text-gray-300">
+                          {tech}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-                  {project.period && (
-                    <p className="text-sm text-gray-400 mb-3">{project.period}</p>
+                  {hasVideo && (
+                    <div className="w-full md:w-1/2">
+                      <div className='flex flex-row justify-between items-center mb-2'>
+                        <p className='text-lg text-gray-400 mb-2'>
+                          Watch the video in:
+                        </p>
+                        <select
+                          className="mb-2 px-2 py-1 rounded bg-slate-800 text-white border border-slate-600"
+                          value={selectedLangIdx}
+                          onChange={e => setVideoLangIndexes({
+                            ...videoLangIndexes,
+                            [index]: Number(e.target.value)
+                          })}
+                          >
+                          {project.lang.map((lang, i) => (
+                            <option key={lang} value={i}>
+                              {langDisplay[lang] || lang}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <iframe
+                        src={project.videoUrl[selectedLangIdx]}
+                        className="w-full h-64 md:h-48 lg:h-56 rounded-lg"
+                        frameBorder="0"
+                        allowFullScreen
+                        title={`Project Video ${project.title}`}
+                      ></iframe>
+                    </div>
                   )}
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline" className="border-gray-600 text-gray-300">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
                 </CardContent>
               </Card>
-            ))}
-          </div>
+            );
+          })}
         </div>
-      </section>
-      
+      </div>
+    </section>
+    
+      {/* Gallery Section */}
       <section id="gallery" className="py-20 bg-gray-100 text-gray-900">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Gallery</h2>
