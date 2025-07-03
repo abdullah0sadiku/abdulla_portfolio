@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button.jsx';
 import { Card, CardContent } from '@/components/ui/card.jsx';
 import { Badge } from '@/components/ui/badge.jsx';
@@ -27,6 +28,27 @@ function App() {
   const [messageSent, setMessageSent] = useState(false);
   const [videoLangIndexes, setVideoLangIndexes] = useState({});
   const langDisplay = { ar: "Arabic", en: "English", shq: "Shqip" };
+
+  // Animation variants
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
+
+  const fadeInScale = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: { opacity: 1, scale: 1 },
+    transition: { duration: 0.8, ease: "easeOut" }
+  };
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
 
 
   const imagePaths = Array.from({ length: 24 }).map((_, index) =>
@@ -357,14 +379,28 @@ const badges = [
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 to-stone-400"></div>
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-100 to-white bg-clip-text text-transparent">
+        <motion.div 
+          className="relative z-10 text-center max-w-4xl mx-auto px-4"
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+        >
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-100 to-white bg-clip-text text-transparent"
+            variants={fadeInUp}
+          >
             Abdulla Sadiku
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
+          </motion.h1>
+          <motion.p 
+            className="text-xl md:text-2xl text-gray-300 mb-8"
+            variants={fadeInUp}
+          >
             Full-stack Web Developer | Data Engineer | Photographer
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
+          </motion.p>
+          <motion.div 
+            className="flex flex-wrap justify-center gap-4 mb-8"
+            variants={fadeInUp}
+          >
             <div className="flex items-center gap-2 text-orange-400">
               <Mail size={20} />
               <span>abdullahbalisadiku@gmail.com</span>
@@ -377,8 +413,11 @@ const badges = [
               <MapPin size={20} />
               <span>Gjilan, Kosovo</span>
             </div>
-          </div>
-          <div className="flex justify-center gap-6 mb-12">
+          </motion.div>
+          <motion.div 
+            className="flex justify-center gap-6 mb-12"
+            variants={fadeInUp}
+          >
             <a href="https://github.com/abdullah0sadiku" target="_blank" rel="noopener noreferrer" 
                className="text-gray-400 hover:text-white transition-colors">
               <Github size={32} />
@@ -391,20 +430,29 @@ const badges = [
                className="text-gray-400 hover:text-white transition-colors">
               <Instagram size={32} />
             </a>
-          </div>
-          <Button 
-            onClick={() => scrollToSection('about')}
-            className="bg-gradient-to-br from-slate-300 to-slate-400 hover:from-slate-900  text-slate-900 hover:text-slate-100 px-8 py-3 rounded-sm font-semibold transition-colors"
-          >
-            Learn More
-            <ChevronDown className="ml-2" size={20} />
-          </Button>
-        </div>
+          </motion.div>
+          <motion.div variants={fadeInUp}>
+            <Button 
+              onClick={() => scrollToSection('about')}
+              className="bg-gradient-to-br from-slate-300 to-slate-400 hover:from-slate-900  text-slate-900 hover:text-slate-100 px-8 py-3 rounded-sm font-semibold transition-colors"
+            >
+              Learn More
+              <ChevronDown className="ml-2" size={20} />
+            </Button>
+          </motion.div>
+        </motion.div>
 
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-l from-slate-300 to-white text-gray-900">
+      <motion.section 
+        id="about" 
+        className="py-20 bg-gradient-to-l from-slate-300 to-white text-gray-900"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -437,10 +485,17 @@ const badges = [
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills & Badges Section */}
-      <section id="skills" className="py-20 bg-gradient-to-br from-slate-700 to-neutral-900 text-white">
+      <motion.section 
+        id="skills" 
+        className="py-20 bg-gradient-to-br from-slate-700 to-neutral-900 text-white"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Skills & Technologies & Badges</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -514,10 +569,17 @@ const badges = [
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gray-100 text-gray-900">
+      <motion.section 
+        id="experience" 
+        className="py-20 bg-gray-100 text-gray-900"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Work Experience</h2>
           <div className="space-y-8">
@@ -546,7 +608,7 @@ const badges = [
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-gradient-to-br from-neutral-700 to-slate-900">
