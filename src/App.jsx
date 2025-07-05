@@ -199,6 +199,8 @@ function App() {
       technologies: ["Laravel 10&11", "PHP", "MySQL", "WebRTC"],
       status: "In Progress",
       period: "Oct 2024 - Present",
+      lang: ['ar','en','shq'],
+      videoUrl: ["https://www.youtube.com/embed/jvK4l1OeMuk?si=MqQiDw8JZaXpdzn-","https://www.youtube.com/embed/JJRF5nf_zoM?si=0HdhnPrFaiqtSKK1","https://www.youtube.com/embed/rya_ugRICvs?si=ujUkHinycpQgBN2c"],
       githubUrl: "https://github.com/abdullah0sadiku/Al-Kurra_School"
     },
     {
@@ -220,6 +222,8 @@ function App() {
       description: "A Python-based reporting system for generating and managing various types of reports. Includes data processing, visualization, and automated report generation features.",
       technologies: ["Python", "Data Processing"],
       status: "Completed",
+      lang: ['ar','en','shq'],
+      videoUrl: ["https://www.youtube.com/embed/1b0d2c4f8e4","https://www.youtube.com/embed/1b0d2c4f8e4","https://www.youtube.com/embed/1b0d2c4f8e4"],
       githubUrl: "https://github.com/abdullah0sadiku/Reports_Checkpoint"
     },
     {
