@@ -27,6 +27,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [messageSent, setMessageSent] = useState(false);
   const [videoLangIndexes, setVideoLangIndexes] = useState({});
+  const [scrolled, setScrolled] = useState(false);
   const langDisplay = { ar: "Arabic", en: "English", shq: "Shqip" };
 
   // Animation variants
@@ -128,6 +129,14 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const skills = {
     "Web Development": [
       "HTML & CSS",
@@ -165,7 +174,7 @@ function App() {
       company: "XponentL Data (Genpact Company)",
       period: "February 2025 - Present",
       description: "Working on data pipeline orchestration using Apache Airflow 3 and Databricks Notebooks. Creating optimized SQL queries and implementing transformation workflows using dbt.",
-      technologies: ["Apache Airflow", "Databricks", "SQL", "dbt", "Azure Cloud", "Python"]
+      technologies: ["Apache Airflow", "Databricks", "SQL", "dbt", "Azure Cloud", "Python","Linux","Neo4j"]
     },
     {
       title: "Full-Stack Web Developer",
@@ -328,53 +337,60 @@ const badges = [
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm z-50 border-slate-400">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="text-2xl font-bold text-white">
-              Abdulla Sadiku
-            </div>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              {['home', 'about', 'skills', 'experience', 'projects','gallery','contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className={`capitalize hover:text-orange-400 transition-colors ${
-                    activeSection === item ? 'text-orange-400' : 'text-gray-300'
-                  }`}
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
+      <nav
+  className={`
+    fixed top-0 w-full z-50 transition-all duration-300
+    ${scrolled
+      ? 'bg-slate-700 backdrop-blur-sm  opacity-100 pointer-events-auto'
+      : 'bg-transparent border-transparent opacity-100 pointer-events-auto'}
+  `}
+>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-between items-center py-4">
+      <div className="text-2xl font-bold text-white">
+        DAWA
+      </div>
+      
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex space-x-8">
+        {['home', 'about', 'skills', 'experience', 'projects','gallery','contact'].map((item) => (
+          <button
+            key={item}
+            onClick={() => scrollToSection(item)}
+            className={`capitalize hover:text-stone-100 transition-colors ${
+              activeSection === item ? 'text-stone-100' : 'text-gray-400'
+            }`}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+    </div>
 
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-800">
-              {['home', 'about', 'skills', 'experience', 'projects','gallery','contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className="block w-full text-left py-2 capitalize hover:text-orange-400 transition-colors"
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </nav>
+    {/* Mobile Navigation */}
+    {isMenuOpen && (
+      <div className="md:hidden py-4 border-t border-gray-800">
+        {['home', 'about', 'skills', 'experience', 'projects','gallery','contact'].map((item) => (
+          <button
+            key={item}
+            onClick={() => scrollToSection(item)}
+            className="block w-full text-left py-2 capitalize hover:text-orange-400 transition-colors"
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+    )}
+  </div>
+</nav>
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -395,7 +411,7 @@ const badges = [
             className="text-xl md:text-2xl text-gray-300 mb-8"
             variants={fadeInUp}
           >
-            Full-stack Web Developer | Data Engineer | Photographer
+            Full-stack Web Developer | Data Engineer <br /> Photographer | Graphic Designer | Video Editor
           </motion.p>
           <motion.div 
             className="flex flex-wrap justify-center gap-4 mb-8"
@@ -456,15 +472,6 @@ const badges = [
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex justify-center">
-              <div className="w-80 h-80 bg-gradient-to-br from-stone-700 to-stone-200  flex items-center justify-center">
-                <img
-                  src="images/dulla-04.png"
-                  alt=""
-                  className="w-80 h-80  object-cover shadow-lg"
-                />
-              </div>
-            </div>
             <div>
               <p className="text-lg text-gray-700 mb-6">
                 Motivated and detail-oriented Computer Science student with hands-on experience in Data Engineering, Full-Stack Web Development, and Python scripting. Currently interning at XponentL Data (a Genpact company), where I work with tools like Databricks, Airflow 3, SQL, dbt, and Azure Cloud.
@@ -481,6 +488,15 @@ const badges = [
                     {cert}
                   </Badge>
                 ))}
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="w-96 h-96 bg-gradient-to-br from-slate-800 to-slate-300  flex items-center justify-center">
+                <img
+                  src="images/dulla-04.png"
+                  alt=""
+                  className="w-full h-full  object-cover shadow-lg"
+                />
               </div>
             </div>
           </div>
