@@ -47,7 +47,7 @@ const Skills = () => {
       link: "https://learn.microsoft.com/en-us/users/abdullasadiku-6684/credentials/fa860b70d83f55ac?ref=https%3A%2F%2Fwww.linkedin.com%2F",
       skills: ["Azure Services", "Cloud Concepts", "Security", "Compliance"],
       featured: true,
-      isNew: true,
+
       color: '#00C896'
     },
     {
@@ -262,16 +262,7 @@ const Skills = () => {
                           />
                         </div>
                         
-                        {badge.isNew && (
-                          <motion.div
-                            className="absolute -top-2 -right-2 px-3 py-1 rounded-lg text-xs font-bold"
-                            style={{ backgroundColor: '#00C896', color: '#FFFFFF' }}
-                            animate={{ scale: [1, 1.1, 1] }}
-                            transition={{ duration: 2, repeat: Infinity }}
-                          >
-                            NEW
-                          </motion.div>
-                        )}
+                        
                         
                         {badge.featured && (
                           <motion.div
@@ -291,7 +282,7 @@ const Skills = () => {
                         {badge.name}
                       </h4>
                       
-                      <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
+                      <div className={`flex flex-wrap gap-2 mb-4 ${badge.featured ? 'justify-center md:justify-start' : 'justify-center'}`}>
                         {badge.skills.map((skill, i) => (
                           <span
                             key={i}

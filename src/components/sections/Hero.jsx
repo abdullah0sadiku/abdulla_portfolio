@@ -91,32 +91,38 @@ const Hero = ({ scrollToSection }) => {
       />
 
       <motion.div 
-        className="relative z-10 text-center max-w-5xl mx-auto px-6"
+        className="relative z-10 text-center max-w-5xl mx-auto px-6 pt-6"
         initial="initial"
         animate="animate"
         variants={staggerContainer}
       >
-
-
-        {/* Name */}
+        {/* Compact Name and Main Tagline */}
         <motion.div 
-          className="mb-8 px-4"
+          className="mb-6 px-4"
           variants={fadeInUp}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 text-white tracking-tight text-center">
-            Abdulla Sadiku
-          </h1>
-          <div className="w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: '#00C896' }}></div>
+          {/* Main Name and Tagline in a more compact layout */}
+          <div className="flex flex-col md:flex-row md:items-center md:justify-center md:gap-8 mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
+              Abdulla Sadiku
+            </h1>
+            <div className="hidden md:block w-px h-12 bg-gray-600"></div>
+            <div className="md:text-left text-center mt-2 md:mt-0">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light leading-tight">
+                The new era of
+              </p>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light leading-tight">
+                Digital Solutions Development
+              </p>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Tagline */}
+        {/* Subtitle */}
         <motion.div 
-          className="mb-12 px-4"
+          className="mb-10 px-4"
           variants={fadeInUp}
         >
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light leading-relaxed mb-4 text-center">
-            The new era of Digital Solutions Development
-          </p>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto text-center">
             Full-Stack Developer & Data Engineer crafting innovative solutions 
             with cutting-edge technology and modern architecture
@@ -125,7 +131,7 @@ const Hero = ({ scrollToSection }) => {
 
         {/* Contact Info Cards */}
         <motion.div 
-          className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-12 max-w-4xl mx-auto px-4"
+          className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 max-w-4xl mx-auto px-4"
           variants={fadeInUp}
         >
           {[
@@ -156,7 +162,7 @@ const Hero = ({ scrollToSection }) => {
 
         {/* Social Links */}
         <motion.div 
-          className="flex justify-center gap-3 sm:gap-4 mb-12 px-4"
+          className="flex justify-center gap-3 sm:gap-4 mb-8 px-4"
           variants={fadeInUp}
         >
           {[
@@ -211,23 +217,7 @@ const Hero = ({ scrollToSection }) => {
       </motion.div>
 
       {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div 
-          className="w-6 h-10 border-2 rounded-full flex justify-center"
-          style={{ borderColor: '#00C896' }}
-        >
-          <motion.div
-            className="w-1 h-3 rounded-full mt-2"
-            style={{ backgroundColor: '#00C896' }}
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </div>
-      </motion.div>
+     
     </section>
   );
 };

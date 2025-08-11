@@ -24,7 +24,7 @@ const Contact = () => {
 
   const onClickDownload = () => {
     const link = document.createElement('a');
-    link.href = 'resume/Resume Abdulla Sadiku.docx'; 
+    link.href = 'resume/Resume.docx'; 
     link.download = 'Abdulla_Sadiku_Resume.docx';
     document.body.appendChild(link);
     link.click();
