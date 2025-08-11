@@ -96,9 +96,9 @@ const About = () => {
                 
               >
                 <img
-                  src="images/dulla-04.png"
-                  alt="Abdulla Sadiku"
-                  className="w-full  object-cover"
+                  src="images/dulla-07.jpg"
+                  alt="Abdulla Sadiku - Ready to debug your life! 😎"
+                  className="w-full object-cover"
                 />
                 {/* Overlay gradient */}
                 <div 
@@ -116,13 +116,48 @@ const About = () => {
                   backgroundColor: 'rgba(0, 200, 150, 0.1)',
                   borderColor: '#00C896'
                 }}
-                animate={{ y: [0, -5, 0] }}
+                animate={{ 
+                  y: [0, -5, 0],
+                  rotate: [0, 2, -2, 0]
+                }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white">7+</div>
-                  <div className="text-xs text-gray-300">Certifications</div>
+                  <div className="text-xs text-gray-300">Certs Collected! 🏆</div>
                 </div>
+              </motion.div>
+
+              {/* Floating emoji */}
+              <motion.div
+                className="absolute -top-4 -left-4 text-2xl"
+                animate={{ 
+                  rotate: [0, 360],
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{ 
+                  duration: 4, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                💻
+              </motion.div>
+
+              {/* Coffee floating */}
+              <motion.div
+                className="absolute top-1/2 -right-8 text-xl"
+                animate={{ 
+                  y: [0, -10, 0],
+                  rotate: [0, 10, -10, 0]
+                }}
+                transition={{ 
+                  duration: 2.5, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                ☕
               </motion.div>
             </div>
           </motion.div>
@@ -137,15 +172,19 @@ const About = () => {
           >
             <div>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                Motivated Computer Science student with hands-on experience in 
+                Professional coffee-to-code converter with expertise in 
                 <span className="text-white font-semibold"> Data Engineering</span>, 
                 <span className="text-white font-semibold"> Full-Stack Development</span>, and 
-                <span className="text-white font-semibold"> Cloud Solutions</span>.
+                <span className="text-white font-semibold"> Making Servers Cry</span> 😢.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                Currently interning at <span className="text-white font-semibold">XponentL Data (Genpact)</span>, 
-                working with cutting-edge technologies like Databricks, Apache Airflow, and Azure Cloud. 
-                I specialize in transforming complex business requirements into scalable digital solutions.
+                Currently taming data monsters at <span className="text-white font-semibold">XponentL Data (Genpact)</span>, 
+                where I convince Databricks and Apache Airflow to play nice together ☁️⚡. 
+                I specialize in turning "it works on my machine" into "it works everywhere" 
+                (most of the time) 🎯.
+              </p>
+              <p className="text-base text-gray-400 leading-relaxed">
+                <em>Warning: May cause excessive use of console.log() and random bursts of excitement when code actually works! 🚀</em>
               </p>
             </div>
 
