@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button.jsx';
 import { Card, CardContent } from '@/components/ui/card.jsx';
+import { useTranslation } from 'react-i18next';
 import { 
   Mail, 
   Phone, 
@@ -19,6 +20,7 @@ import {
 } from 'lucide-react';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [messageSent, setMessageSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -73,22 +75,22 @@ const Contact = () => {
   const contactMethods = [
     {
       icon: Mail,
-      label: "Email",
-      value: "abdullahbalisadiku@gmail.com",
-      href: "mailto:abdullahbalisadiku@gmail.com",
+      label: t('contact.methods.email'),
+      value: t('hero.email'),
+      href: `mailto:${t('hero.email')}`,
       color: '#00C896'
     },
     {
       icon: Phone,
-      label: "Phone",
-      value: "+383 48 285002",
-      href: "tel:+38348285002",
+      label: t('contact.methods.phone'),
+      value: t('hero.phone'),
+      href: `tel:${t('hero.phone').replace(/\s+/g, '')}`,
       color: '#694E70'
     },
     {
       icon: MapPin,
-      label: "Location",
-      value: "Gjilan, Kosovo",
+      label: t('contact.methods.location'),
+      value: t('hero.location'),
       href: "#",
       color: '#FFFFFF'
     }
@@ -158,7 +160,7 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white relative">
-            Get In Touch
+            {t('contact.title')}
             <motion.div
               className="absolute -top-2 -right-8 p-2 rounded-lg"
               style={{ backgroundColor: '#00C896' }}
@@ -176,7 +178,7 @@ const Contact = () => {
           </h2>
           <div className="w-16 h-1 mx-auto rounded-full" style={{ backgroundColor: '#00C896' }}></div>
           <p className="text-xl mt-6 text-gray-300 max-w-3xl mx-auto">
-            Let's collaborate and create something amazing together
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -192,7 +194,7 @@ const Contact = () => {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-3xl font-bold text-white">
-                  Let's Connect
+                  {t('contact.connectTitle')}
                 </h3>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button 
@@ -213,14 +215,13 @@ const Contact = () => {
                     }}
                   >
                     <Download size={16} />
-                    Download CV
+                    {t('contact.downloadCV')}
                   </Button>
                 </motion.div>
               </div>
               
-              <p className="text-lg text-gray-300 leading-relaxed mb-8">
-                I'm always interested in new opportunities and collaborations. Whether you have a project in mind 
-                or just want to chat about technology, feel free to reach out!
+              <p className="text-lg text-gray-300 leading-relaxed mb-8 rtl-text">
+                {t('contact.description')}
               </p>
             </div>
 
@@ -276,7 +277,7 @@ const Contact = () => {
             {/* Social Links */}
             <div className="pt-8">
               <h4 className="text-lg font-semibold mb-4 text-white">
-                Follow Me
+                {t('contact.followMe')}
               </h4>
               <div className="flex gap-4">
                 {socialLinks.map((social) => (
@@ -336,10 +337,10 @@ const Contact = () => {
                       </div>
                     </div>
                     <h3 className="text-2xl font-bold mb-2 text-white">
-                      Message Sent Successfully!
+                      {t('contact.form.successTitle')}
                     </h3>
                     <p className="text-gray-300">
-                      Thank you for reaching out. I'll get back to you soon!
+                      {t('contact.form.successMessage')}
                     </p>
                   </motion.div>
                 ) : (
@@ -347,7 +348,7 @@ const Contact = () => {
                     <div>
                       <label className="flex items-center gap-2 text-sm font-semibold mb-3 text-white">
                         <User size={16} style={{ color: '#00C896' }} />
-                        Full Name
+                        {t('contact.form.name')}
                       </label>
                       <input 
                         type="text" 
@@ -358,7 +359,7 @@ const Contact = () => {
                           borderColor: 'rgba(255, 255, 255, 0.2)',
                           color: '#FFFFFF'
                         }}
-                        placeholder="Your full name"
+                        placeholder={t('contact.form.namePlaceholder')}
                         required
                         onFocus={(e) => {
                           e.target.style.borderColor = '#00C896';
@@ -374,7 +375,7 @@ const Contact = () => {
                     <div>
                       <label className="flex items-center gap-2 text-sm font-semibold mb-3 text-white">
                         <AtSign size={16} style={{ color: '#00C896' }} />
-                        Email Address
+                        {t('contact.form.email')}
                       </label>
                       <input 
                         type="email" 
@@ -385,7 +386,7 @@ const Contact = () => {
                           borderColor: 'rgba(255, 255, 255, 0.2)',
                           color: '#FFFFFF'
                         }}
-                        placeholder="your.email@example.com"
+                        placeholder={t('contact.form.emailPlaceholder')}
                         required
                         onFocus={(e) => {
                           e.target.style.borderColor = '#00C896';
@@ -401,7 +402,7 @@ const Contact = () => {
                     <div>
                       <label className="flex items-center gap-2 text-sm font-semibold mb-3 text-white">
                         <FileText size={16} style={{ color: '#00C896' }} />
-                        Message
+                        {t('contact.form.message')}
                       </label>
                       <textarea 
                         rows={5}
@@ -412,7 +413,7 @@ const Contact = () => {
                           borderColor: 'rgba(255, 255, 255, 0.2)',
                           color: '#FFFFFF'
                         }}
-                        placeholder="Tell me about your project or just say hello..."
+                        placeholder={t('contact.form.messagePlaceholder')}
                         required
                         onFocus={(e) => {
                           e.target.style.borderColor = '#00C896';
@@ -454,12 +455,12 @@ const Contact = () => {
                               className="animate-spin rounded-full h-5 w-5 border-b-2 mr-3"
                               style={{ borderColor: '#FFFFFF' }}
                             />
-                            Sending Message...
+                            {t('contact.form.sending')}
                           </div>
                         ) : (
                           <div className="flex items-center justify-center">
                             <Send size={20} className="mr-3" />
-                            Send Message
+                            {t('contact.form.send')}
                           </div>
                         )}
                       </Button>

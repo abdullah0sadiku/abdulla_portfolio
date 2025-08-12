@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge.jsx';
 import { Card, CardContent } from '@/components/ui/card.jsx';
+import { useTranslation } from 'react-i18next';
 import { 
   Code, 
   Database, 
@@ -13,8 +14,10 @@ import {
 } from 'lucide-react';
 
 const Skills = () => {
+  const { t } = useTranslation();
+  
   const skills = {
-    "Frontend & Web": {
+    [t('skills.categories.frontend')]: {
       icon: Code,
       color: '#00C896',
       skills: [
@@ -22,7 +25,7 @@ const Skills = () => {
         "Bootstrap", "PHP", "Laravel", "Django"
       ]
     },
-    "Data & Cloud": {
+    [t('skills.categories.data')]: {
       icon: Database,
       color: '#694E70',
       skills: [
@@ -30,7 +33,7 @@ const Skills = () => {
         "dbt", "Azure Cloud", "Linux", "MySQL"
       ]
     },
-    "DevOps & Tools": {
+    [t('skills.categories.devops')]: {
       icon: Settings,
       color: '#FFFFFF',
       skills: [
@@ -141,11 +144,11 @@ const Skills = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Skills & Technologies
+            {t('skills.title')}
           </h2>
           <div className="w-16 h-1 mx-auto rounded-full" style={{ backgroundColor: '#00C896' }}></div>
           <p className="text-xl mt-6 text-gray-300 max-w-3xl mx-auto">
-            Comprehensive expertise in modern development and data technologies
+            {t('skills.subtitle')}
           </p>
         </motion.div>
 
@@ -220,11 +223,11 @@ const Skills = () => {
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Professional Certifications
+              {t('skills.certificationsTitle')}
             </h3>
             <div className="w-12 h-1 mx-auto rounded-full" style={{ backgroundColor: '#00C896' }}></div>
             <p className="text-lg mt-4 text-gray-300">
-              Industry-recognized credentials and achievements
+              {t('skills.certificationsSubtitle')}
             </p>
           </div>
 
@@ -316,7 +319,7 @@ const Skills = () => {
                         whileTap={{ scale: 0.95 }}
                       >
                         <Zap size={16} />
-                        Verify Credential
+                        {t('skills.verifyCredential')}
                         <ExternalLink size={16} />
                       </motion.a>
                     </div>

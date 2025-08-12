@@ -3,36 +3,29 @@ import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge.jsx';
 import { Card, CardContent } from '@/components/ui/card.jsx';
 import { Code, Database, Cloud, Award } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
-  const certifications = [
-    "Databricks Certified Data Engineer Associate",
-    "Apache Airflow 2 & 3 Fundamentals", 
-    "Microsoft Azure Fundamentals (AZ-900)",
-    "IT Essentials - Cisco",
-    "Full-Stack Web Developer",
-    "PCAP - Programming Essentials in Python",
-    "Neo4J Certified Professional",
-  ];
+  const { t } = useTranslation();
 
   const highlights = [
     {
       icon: Code,
-      title: "Full-Stack Development",
-      description: "Building modern web applications with React, Laravel, and cutting-edge frameworks for seamless user experiences.",
-      stats: "2+ Years"
+      title: t('about.highlights.fullStack.title'),
+      description: t('about.highlights.fullStack.description'),
+      stats: t('about.highlights.fullStack.stats')
     },
     {
       icon: Database,
-      title: "Data Engineering",
-      description: "Creating robust data pipelines and analytics solutions using Databricks, Airflow, and cloud technologies.",
-      stats: "7 Months"
+      title: t('about.highlights.dataEngineering.title'),
+      description: t('about.highlights.dataEngineering.description'),
+      stats: t('about.highlights.dataEngineering.stats')
     },
     {
       icon: Cloud,
-      title: "Cloud Architecture",
-      description: "Designing scalable cloud solutions on Azure with focus on performance, security, and cost optimization.",
-      stats: "Multi-Cloud"
+      title: t('about.highlights.cloud.title'),
+      description: t('about.highlights.cloud.description'),
+      stats: t('about.highlights.cloud.stats')
     }
   ];
 
@@ -66,11 +59,11 @@ const About = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            About Me
+            {t('about.title')}
           </h2>
           <div className="w-16 h-1 mx-auto rounded-full" style={{ backgroundColor: '#00C896' }}></div>
           <p className="text-xl mt-6 text-gray-300 max-w-3xl mx-auto">
-            Passionate developer creating digital solutions that bridge innovation and functionality
+            {t('about.subtitle')}
           </p>
         </motion.div>
 
@@ -121,8 +114,8 @@ const About = () => {
                           style={{ backgroundColor: 'rgba(0, 200, 150, 0.6)' }}
                         >
                           <div className="text-center text-white">
-                            <h4 className="font-bold text-lg mb-2">Professional Mode</h4>
-                            <p className="text-sm text-gray-200">"When the code actually works on the first try"</p>
+                            <h4 className="font-bold text-lg mb-2">{t('about.hoverComments.professional.title')}</h4>
+                            <p className="text-sm text-gray-200">"{t('about.hoverComments.professional.text')}"</p>
                           </div>
                         </div>
                       </div>
@@ -432,7 +425,7 @@ const About = () => {
               >
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white">7+</div>
-                  <div className="text-xs text-gray-300">Certs Collected!</div>
+                  <div className="text-xs text-gray-300">{t('about.stats.certs')}</div>
                 </div>
               </motion.div>
 
@@ -515,20 +508,14 @@ const About = () => {
             viewport={{ once: true }}
           >
             <div>
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                Professional coffee-to-code converter with expertise in 
-                <span className="text-white font-semibold"> Data Engineering</span>, 
-                <span className="text-white font-semibold"> Full-Stack Development</span>, and 
-                <span className="text-white font-semibold"> Making Servers Cry</span>.
+              <p className="text-lg text-gray-300 leading-relaxed mb-6 about-description">
+                {t('about.description1')}
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                Currently taming data monsters at <span className="text-white font-semibold">XponentL Data (Genpact)</span>, 
-                where I convince Databricks and Apache Airflow to play nice together. 
-                I specialize in turning "it works on my machine" into "it works everywhere" 
-                (most of the time).
+              <p className="text-lg text-gray-300 leading-relaxed mb-6 about-description">
+                {t('about.description2')}
               </p>
-              <p className="text-base text-gray-400 leading-relaxed">
-                <em>Warning: May cause excessive use of console.log() and random bursts of excitement when code actually works!</em>
+              <p className="text-base text-gray-400 leading-relaxed about-description">
+                <em>{t('about.warning')}</em>
               </p>
             </div>
 
@@ -536,10 +523,10 @@ const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4 text-white flex items-center">
                 <Award className="mr-2" style={{ color: '#00C896' }} size={20} />
-                Certifications & Achievements
+                {t('about.certificationsTitle')}
               </h3>
               <div className="grid grid-cols-1 gap-2">
-                {certifications.map((cert, index) => (
+                {t('about.certifications', { returnObjects: true }).map((cert, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}

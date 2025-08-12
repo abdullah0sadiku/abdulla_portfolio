@@ -1,0 +1,148 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "Abdulla Sadiku",
+    "tagline": "The new era of",
+    "tagline2": "Digital Solutions Development",
+    "subtitle": "Full-Stack Developer & Data Engineer crafting innovative solutions with cutting-edge technology and modern architecture",
+    "email": "abdullahbalisadiku@gmail.com",
+    "phone": "+383 48 285002",
+    "location": "Gjilan, Kosovo",
+    "cta": "Explore My Work"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Passionate developer creating digital solutions that bridge innovation and functionality",
+    "description1": "Professional coffee-to-code converter with expertise in Data Engineering, Full-Stack Development, and Making Servers Cry.",
+    "description2": "Currently taming data monsters at XponentL Data (Genpact), where I convince Databricks and Apache Airflow to play nice together. I specialize in turning \"it works on my machine\" into \"it works everywhere\" (most of the time).",
+    "warning": "Warning: May cause excessive use of console.log() and random bursts of excitement when code actually works!",
+    "certificationsTitle": "Certifications & Achievements",
+    "highlights": {
+      "fullStack": {
+        "title": "Full-Stack Development",
+        "description": "Building modern web applications with React, Laravel, and cutting-edge frameworks for seamless user experiences.",
+        "stats": "2+ Years"
+      },
+      "dataEngineering": {
+        "title": "Data Engineering",
+        "description": "Creating robust data pipelines and analytics solutions using Databricks, Airflow, and cloud technologies.",
+        "stats": "7 Months"
+      },
+      "cloud": {
+        "title": "Cloud Architecture",
+        "description": "Designing scalable cloud solutions on Azure with focus on performance, security, and cost optimization.",
+        "stats": "Multi-Cloud"
+      }
+    },
+    "certifications": [
+      "Databricks Certified Data Engineer Associate",
+      "Apache Airflow 2 & 3 Fundamentals",
+      "Microsoft Azure Fundamentals (AZ-900)",
+      "IT Essentials - Cisco",
+      "Full-Stack Web Developer",
+      "PCAP - Programming Essentials in Python",
+      "Neo4J Certified Professional"
+    ],
+    "hoverComments": {
+      "professional": {
+        "title": "Professional Mode",
+        "text": "When the code actually works on the first try"
+      },
+      "creative": {
+        "title": "Creative Spark",
+        "text": "Problem-solving mode activated"
+      },
+      "focus": {
+        "title": "Deep Focus",
+        "text": "Debugging the mysteries of the universe"
+      },
+      "innovation": {
+        "title": "Innovation Mode",
+        "text": "Building the future, one line at a time"
+      }
+    },
+    "stats": {
+      "certs": "Certs Collected!"
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Comprehensive expertise in modern development and data technologies",
+    "categories": {
+      "frontend": "Frontend & Web",
+      "data": "Data & Cloud",
+      "devops": "DevOps & Tools"
+    },
+    "certificationsTitle": "Professional Certifications",
+    "certificationsSubtitle": "Industry-recognized credentials and achievements",
+    "verifyCredential": "Verify Credential"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A showcase of innovative solutions and creative implementations",
+    "status": {
+      "completed": "Completed",
+      "inProgress": "In Progress"
+    },
+    "viewCode": "View Code",
+    "categories": {
+      "webApp": "Web Application",
+      "desktopApp": "Desktop Application",
+      "dataTool": "Data Tool",
+      "ecommerce": "E-commerce",
+      "database": "Database System"
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let's collaborate and create something amazing together",
+    "connectTitle": "Let's Connect",
+    "description": "I'm always interested in new opportunities and collaborations. Whether you have a project in mind or just want to chat about technology, feel free to reach out!",
+    "downloadCV": "Download CV",
+    "followMe": "Follow Me",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address", 
+      "emailPlaceholder": "your.email@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project or just say hello...",
+      "send": "Send Message",
+      "sending": "Sending Message...",
+      "successTitle": "Message Sent Successfully!",
+      "successMessage": "Thank you for reaching out. I'll get back to you soon!"
+    },
+    "methods": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "Professional journey and key achievements in technology",
+    "status": {
+      "current": "Current",
+      "completed": "Completed"
+    },
+    "labels": {
+      "location": "Location",
+      "period": "Period",
+      "technologies": "Technologies",
+      "highlights": "Key Highlights"
+    }
+  },
+  "language": {
+    "selector": "Language",
+    "english": "English",
+    "arabic": "العربية",
+    "albanian": "Shqip"
+  }
+}

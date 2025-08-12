@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Code2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../ui/language-switcher.jsx';
 
 const Navigation = ({ activeSection, scrollToSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
 
   const navigationItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-
-    { id: 'contact', label: 'Contact' }
+    { id: 'home', label: t('navigation.home') },
+    { id: 'about', label: t('navigation.about') },
+    { id: 'skills', label: t('navigation.skills') },
+    { id: 'experience', label: t('navigation.experience') },
+    { id: 'projects', label: t('navigation.projects') },
+    { id: 'contact', label: t('navigation.contact') }
   ];
 
   useEffect(() => {
@@ -58,7 +60,7 @@ const Navigation = ({ activeSection, scrollToSection }) => {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex">
+            <div className="hidden lg:flex items-center space-x-4">
               <div 
                 className="flex items-center space-x-1 rounded-xl px-2 py-1 border backdrop-blur-sm"
                 style={{ 
@@ -85,19 +87,24 @@ const Navigation = ({ activeSection, scrollToSection }) => {
                   </motion.button>
                 ))}
               </div>
+              
+              {/* Language Switcher */}
+              <LanguageSwitcher />
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-3 rounded-lg border transition-all duration-300"
-              style={{ 
-                backgroundColor: 'rgba(0, 200, 150, 0.1)',
-                borderColor: 'rgba(0, 200, 150, 0.3)',
-                color: '#FFFFFF'
-              }}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <AnimatePresence mode="wait">
+            {/* Mobile Menu Button and Language Switcher */}
+            <div className="lg:hidden flex items-center space-x-3">
+              <LanguageSwitcher />
+              <button
+                className="p-3 rounded-lg border transition-all duration-300"
+                style={{ 
+                  backgroundColor: 'rgba(0, 200, 150, 0.1)',
+                  borderColor: 'rgba(0, 200, 150, 0.3)',
+                  color: '#FFFFFF'
+                }}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <AnimatePresence mode="wait">
                 {isMenuOpen ? (
                   <motion.div
                     key="close"
@@ -121,6 +128,7 @@ const Navigation = ({ activeSection, scrollToSection }) => {
                 )}
               </AnimatePresence>
             </button>
+            </div>
           </div>
         </div>
       </motion.nav>

@@ -1,0 +1,149 @@
+{
+    "navigation": {
+      "home": "Kryefaqja",
+      "about": "Rreth Meje",
+      "skills": "Aftësitë",
+      "experience": "Përvoja",
+      "projects": "Projektet",
+      "contact": "Kontakti"
+    },
+    "hero": {
+      "name": "Abdulla Sadiku",
+      "tagline": "Epoka e re e",
+      "tagline2": "Zhvillimit të Zgjidhjeve Digjitale",
+      "subtitle": "Zhvillues Full-Stack dhe Inxhinier i të Dhënave që krijon zgjidhje inovative me teknologji të fundit dhe arkitekturë moderne.",
+      "email": "abdullahbalisadiku@gmail.com",
+      "phone": "+383 48 285002",
+      "location": "Gjilan, Kosovë",
+      "cta": "Eksploro Punën Time"
+    },
+    "about": {
+      "title": "Rreth Meje",
+      "subtitle": "Zhvillues i pasionuar, krijoj zgjidhje digjitale që ndërthurin inovacionin me funksionalitetin.",
+      "description1": "Shndërroj idetë në kod funksional, me ekspertizë të thelluar në Inxhinierinë e të Dhënave, Zhvillimin Full-Stack dhe optimizimin e performancës së serverëve.",
+      "description2": "Aktualisht punoj në XponentL Data (Genpact), ku punoj në projekte të avancuara të integrimit të të dhënave duke përdorur Databricks dhe Apache Airflow dhe teknologji te tjera. Specializimi im është të ndërtoj zgjidhje të qëndrueshme që funksionojnë në çdo mjedis.",
+      "warning": "Shënim: Përdor console.log() për diagnostikim të saktë dhe festoj arritjen e objektivave kur kodi ekzekutohet me sukses.",
+      "certificationsTitle": "Certifikimet dhe Arritjet",
+      "highlights": {
+        "fullStack": {
+          "title": "Zhvillim Full-Stack",
+          "description": "Ndërtimi i aplikacioneve moderne të uebit me React, Laravel dhe framework-e të fundit për përvoja të përdoruesit pa probleme.",
+          "stats": "2+ Vite"
+        },
+        "dataEngineering": {
+          "title": "Inxhinieri e të Dhënave",
+          "description": "Krijimi i tubacioneve të fuqishme të të dhënave dhe zgjidhjeve analitike duke përdorur Databricks, Airflow dhe teknologji cloud.",
+          "stats": "7 Muaj"
+        },
+        "cloud": {
+          "title": "Arkitekturë Cloud",
+          "description": "Projektimi i zgjidhjeve cloud të shkallëzueshme në Azure me fokus në performancë, siguri dhe optimizim të kostos.",
+          "stats": "Multi-Cloud"
+        }
+      },
+      "certifications": [
+        "Databricks Certified Data Engineer Associate",
+        "Apache Airflow 2 & 3 Fundamentals",
+        "Microsoft Azure Fundamentals (AZ-900)",
+        "IT Essentials - Cisco",
+        "Full-Stack Web Developer",
+        "PCAP - Programming Essentials in Python",
+        "Neo4J Certified Professional"
+      ],
+      "hoverComments": {
+        "professional": {
+          "title": "Profesionalizëm",
+          "text": "Kur kodi funksionon me efikasitet që në tentativën e parë."
+        },
+        "creative": {
+          "title": "Kreativitet",
+          "text": "Në modalitetin e zgjidhjes së problemeve."
+        },
+        "focus": {
+          "title": "Fokus i Thellë",
+          "text": "Duke analizuar dhe korrigjuar sisteme komplekse."
+        },
+        "innovation": {
+          "title": "Inovacion",
+          "text": "Duke ndërtuar të ardhmen, një rresht kodi në të njëjtën kohë."
+        }
+      },
+      "stats": {
+        "certs": "Certifikime të Verifikuara"
+      }
+    },
+    "skills": {
+      "title": "Aftësitë dhe Teknologjitë",
+      "subtitle": "Ekspertizë gjithëpërfshirëse në zhvillimin modern dhe teknologjitë e të dhënave.",
+      "categories": {
+        "frontend": "Frontend dhe Ueb",
+        "data": "Të Dhënat dhe Cloud",
+        "devops": "DevOps dhe Mjetet"
+      },
+      "certificationsTitle": "Certifikime Profesionale",
+      "certificationsSubtitle": "Kredenciale dhe arritje të njohura në industri",
+      "verifyCredential": "Verifiko Kredencialin"
+    },
+    "projects": {
+      "title": "Projekte të Veçanta",
+      "subtitle": "Një paraqitje e zgjidhjeve inovative dhe implementimeve kreative",
+      "status": {
+        "completed": "E Përfunduar",
+        "inProgress": "Në Progres"
+      },
+      "viewCode": "Shiko Kodin",
+      "categories": {
+        "webApp": "Aplikacion Uebi",
+        "desktopApp": "Aplikacion Desktopi",
+        "dataTool": "Mjet i të Dhënave",
+        "ecommerce": "E-commerce",
+        "database": "Sistem i Bazës së të Dhënave"
+      }
+    },
+    "contact": {
+      "title": "Kontaktoni",
+      "subtitle": "Le të bashkëpunojmë dhe të krijojmë diçka të mrekullueshme së bashku.",
+      "connectTitle": "Le të Lidhemi",
+      "description": "Jam gjithmonë i interesuar për mundësi të reja dhe bashkëpunime. Pavarësisht nëse keni një projekt në mendje apo thjesht dëshironi të flisni për teknologjinë, mos hezitoni të kontaktoni!",
+      "downloadCV": "Shkarko CV-në",
+      "followMe": "Më Ndiqni",
+      "form": {
+        "name": "Emri i Plotë",
+        "namePlaceholder": "Emri juaj i plotë",
+        "email": "Adresa e Email-it",
+        "emailPlaceholder": "your.email@example.com",
+        "message": "Mesazhi",
+        "messagePlaceholder": "Më tregoni për projektin tuaj ose thjesht thoni përshëndetje...",
+        "send": "Dërgo Mesazhin",
+        "sending": "Duke Dërguar...",
+        "successTitle": "Mesazhi u Dërgua me Sukses!",
+        "successMessage": "Faleminderit që kontaktuat. Do t'ju përgjigjem së shpejti!"
+      },
+      "methods": {
+        "email": "Email",
+        "phone": "Telefoni",
+        "location": "Vendndodhja"
+      }
+    },
+    "experience": {
+      "title": "Përvoja e Punës",
+      "subtitle": "Udhëtimi profesional dhe arritjet kryesore në teknologji",
+      "status": {
+        "current": "Aktuale",
+        "completed": "E Përfunduar"
+      },
+      "labels": {
+        "location": "Vendndodhja",
+        "period": "Periudha",
+        "technologies": "Teknologjitë",
+        "highlights": "Pikat Kryesore"
+      }
+    },
+    "language": {
+      "selector": "Gjuha",
+      "english": "English",
+      "arabic": "العربية",
+      "albanian": "Shqip"
+    }
+  }
+  

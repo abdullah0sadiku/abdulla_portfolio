@@ -2,9 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge.jsx';
 import { Card, CardContent } from '@/components/ui/card.jsx';
+import { useTranslation } from 'react-i18next';
 import { Building, Calendar, MapPin, CheckCircle, TrendingUp } from 'lucide-react';
 
 const Experience = () => {
+  const { t } = useTranslation();
+  
   const experiences = [
     {
       title: "Data Engineer Associate (Full-Time)",
@@ -112,11 +115,11 @@ const Experience = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Work Experience
+            {t('experience.title')}
           </h2>
           <div className="w-16 h-1 mx-auto rounded-full" style={{ backgroundColor: '#00C896' }}></div>
-          <p className="text-xl mt-6 text-gray-300 max-w-3xl mx-auto">
-            Building expertise through hands-on experience and professional growth
+          <p className="text-xl mt-6 text-gray-300 max-w-3xl mx-auto rtl-text">
+            {t('experience.subtitle')}
           </p>
         </motion.div>
 
@@ -186,7 +189,7 @@ const Experience = () => {
                       </div>
 
                       {/* Description */}
-                      <p className="text-gray-300 mb-6 leading-relaxed">
+                      <p className="text-gray-300 mb-6 leading-relaxed rtl-text">
                         {exp.description}
                       </p>
 
@@ -194,7 +197,7 @@ const Experience = () => {
                       <div className="mb-6">
                         <h4 className="text-lg font-semibold mb-3 flex items-center text-white">
                           <TrendingUp size={18} className="mr-2" style={{ color: '#00C896' }} />
-                          Key Achievements
+                          {t('experience.labels.highlights')}
                         </h4>
                         <ul className="grid md:grid-cols-2 gap-2">
                           {exp.highlights.map((highlight, hIndex) => (
@@ -207,7 +210,7 @@ const Experience = () => {
                               viewport={{ once: true }}
                             >
                               <CheckCircle size={16} className="mt-0.5 mr-3 flex-shrink-0" style={{ color: '#00C896' }} />
-                              <span className="text-sm">{highlight}</span>
+                              <span className="text-sm rtl-text">{highlight}</span>
                             </motion.li>
                           ))}
                         </ul>
@@ -216,7 +219,7 @@ const Experience = () => {
                       {/* Technologies */}
                       <div>
                         <h4 className="text-sm font-semibold mb-3 text-white">
-                          Technologies Used
+                          {t('experience.labels.technologies')}
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {exp.technologies.map((tech, techIndex) => (

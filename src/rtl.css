@@ -1,0 +1,34 @@
+/* RTL (Right-to-Left) styles for Arabic language - Minimal changes, preserve design */
+
+/* Only change text direction for paragraphs and main content areas */
+[dir="rtl"] p,
+[dir="rtl"] .text-content {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Form inputs should align right for Arabic */
+[dir="rtl"] input[type="text"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Only change text alignment for specific content blocks, not layout */
+[dir="rtl"] .about-description,
+[dir="rtl"] .hero-subtitle {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Keep all navigation, layout, and positioning exactly the same */
+/* DO NOT change flex directions, margins, or positioning */
+/* DO NOT move the side navigation indicator */
+/* DO NOT reverse navigation order */
+
+/* Only apply RTL to actual text content that needs it */
+[dir="rtl"] .rtl-text {
+  text-align: right;
+  direction: rtl;
+}

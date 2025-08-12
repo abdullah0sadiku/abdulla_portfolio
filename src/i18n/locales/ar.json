@@ -1,0 +1,150 @@
+{
+    "navigation": {
+      "home": "الرئيسية",
+      "about": "نبذة عني",
+      "skills": "المهارات",
+      "experience": "الخبرة",
+      "projects": "المشاريع",
+      "contact": "تواصل معي"
+    },
+    "hero": {
+      "name": "عبدالله صديقو",
+      "tagline": "عصر جديد من",
+      "tagline2": "تطوير الحلول الرقمية",
+      "subtitle": "مطور متكامل ومهندس بيانات، أصنع حلولاً مبتكرة بأحدث التقنيات والتصاميم العصرية.",
+      "email": "abdullahbalisadiku@gmail.com",
+      "phone": "+383 48 285002",
+      "location": "جيلان، كوسوفو",
+      "cta": "اكتشف أعمالي"
+    },
+    "about": {
+      "title": "نبذة عني",
+      "subtitle": "مطور شغوف، أبتكر حلولاً رقمية تجمع بين الإبداع والكفاءة الوظيفية.",
+      "description1": "أُحوِّل الأفكار إلى واقع برمجي، بخبرة متعمقة في هندسة البيانات، والتطوير المتكامل، وتحسين أداء الخوادم.",
+      "description2": "أعمل حاليًا في XponentL Data (Genpact)، حيث أقود مشاريع متقدمة في تكامل البيانات باستخدام Databricks وApache Airflow. أتخصص في بناء حلول برمجية موثوقة تعمل بكفاءة في مختلف البيئات.",
+      "warning": "ملاحظة: أستخدم console.log() لتصحيح الأخطاء بدقة، وأحتفي بالنجاح عند إنجاز كل مرحلة من مراحل الكود.",
+      "certificationsTitle": "الشهادات والخبرات المعتمدة",
+      "highlights": {
+        "fullStack": {
+          "title": "التطوير المتكامل",
+          "description": "بناء تطبيقات ويب حديثة باستخدام React وLaravel وأطر عمل متطورة لتجارب مستخدم سلسة.",
+          "stats": "+2 سنوات"
+        },
+        "dataEngineering": {
+          "title": "هندسة البيانات",
+          "description": "إنشاء خطوط بيانات قوية وحلول تحليلية باستخدام Databricks وAirflow وتقنيات السحابة.",
+          "stats": "7 أشهر"
+        },
+        "cloud": {
+          "title": "الهندسة السحابية",
+          "description": "تصميم حلول سحابية قابلة للتطوير على Azure مع التركيز على الأداء والأمان وتحسين التكاليف.",
+          "stats": "سحابة متعددة"
+        }
+      },
+      "certifications": [
+        "Databricks Certified Data Engineer Associate",
+        "Apache Airflow 2 & 3 Fundamentals",
+        "Microsoft Azure Fundamentals (AZ-900)",
+        "IT Essentials - Cisco",
+        "Full-Stack Web Developer",
+        "PCAP - Programming Essentials in Python",
+        "Neo4J Certified Professional"
+      ],
+      "hoverComments": {
+        "professional": {
+          "title": "الاحترافية",
+          "text": "عندما يعمل الكود بكفاءة من المحاولة الأولى."
+        },
+        "creative": {
+          "title": "الإبداع",
+          "text": "في وضعية حل المشكلات."
+        },
+        "focus": {
+          "title": "التركيز",
+          "text": "أثناء تحليل وتصحيح الأنظمة المعقدة."
+        },
+        "innovation": {
+          "title": "الابتكار",
+          "text": "بناء المستقبل، سطرًا برمجيًا في كل مرة."
+        }
+      },
+      "stats": {
+        "certs": "شهادات معتمدة"
+      }
+    },
+
+    "skills": {
+      "title": "المهارات والتقنيات",
+      "subtitle": "خبرة شاملة في تقنيات التطوير والبيانات الحديثة",
+      "categories": {
+        "frontend": "الواجهة الأمامية والويب",
+        "data": "البيانات والسحابة",
+        "devops": "DevOps والأدوات"
+      },
+      "certificationsTitle": "الشهادات الاحترافية",
+      "certificationsSubtitle": "شهادات وإنجازات معترف بها في الصناعة",
+      "verifyCredential": "تحقق من الشهادة"
+    },
+    "projects": {
+      "title": "مشاريع مميزة",
+      "subtitle": "استعراض للحلول المبتكرة والتطبيقات الإبداعية",
+      "status": {
+        "completed": "مكتمل",
+        "inProgress": "قيد التنفيذ"
+      },
+      "viewCode": "عرض الكود",
+      "categories": {
+        "webApp": "تطبيق ويب",
+        "desktopApp": "تطبيق سطح مكتب",
+        "dataTool": "أداة بيانات",
+        "ecommerce": "تجارة إلكترونية",
+        "database": "نظام قاعدة بيانات"
+      }
+    },
+    "contact": {
+      "title": "تواصل معي",
+      "subtitle": "لنتعاون ونبتكر شيئًا رائعًا معًا",
+      "connectTitle": "لنتواصل",
+      "description": "أنا مهتم دائمًا بالفرص الجديدة والتعاون. سواء كان لديك مشروع في ذهنك أو ترغب فقط في الحديث عن التكنولوجيا، لا تتردد في التواصل!",
+      "downloadCV": "تحميل السيرة الذاتية",
+      "followMe": "تابعني",
+      "form": {
+        "name": "الاسم الكامل",
+        "namePlaceholder": "اسمك الكامل",
+        "email": "البريد الإلكتروني",
+        "emailPlaceholder": "your.email@example.com",
+        "message": "الرسالة",
+        "messagePlaceholder": "أخبرني عن مشروعك أو فقط قل مرحبًا...",
+        "send": "إرسال الرسالة",
+        "sending": "جاري الإرسال...",
+        "successTitle": "تم إرسال الرسالة بنجاح!",
+        "successMessage": "شكرًا لتواصلك. سأرد عليك قريبًا!"
+      },
+      "methods": {
+        "email": "البريد الإلكتروني",
+        "phone": "الهاتف",
+        "location": "الموقع"
+      }
+    },
+    "experience": {
+      "title": "الخبرة العملية",
+      "subtitle": "مسيرتي المهنية وأبرز إنجازاتي في مجال التكنولوجيا",
+      "status": {
+        "current": "حالي",
+        "completed": "مكتمل"
+      },
+      "labels": {
+        "location": "الموقع",
+        "period": "الفترة",
+        "technologies": "التقنيات",
+        "highlights": "أبرز الإنجازات"
+      }
+    },
+    "language": {
+      "selector": "اللغة",
+      "english": "English",
+      "arabic": "العربية",
+      "albanian": "Shqip"
+    }
+  }
+  

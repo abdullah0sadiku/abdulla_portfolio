@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button.jsx';
+import { useTranslation } from 'react-i18next';
 import { 
   Github, 
   Linkedin, 
@@ -13,6 +14,8 @@ import {
 } from 'lucide-react';
 
 const Hero = ({ scrollToSection }) => {
+  const { t } = useTranslation();
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0 },
@@ -104,15 +107,15 @@ const Hero = ({ scrollToSection }) => {
           {/* Main Name and Tagline in a more compact layout */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-center md:gap-8 mb-4">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
-              Abdulla Sadiku
+              {t('hero.name')}
             </h1>
             <div className="hidden md:block w-px h-12 bg-gray-600"></div>
             <div className="md:text-left text-center mt-2 md:mt-0">
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light leading-tight">
-                The new era of
+                {t('hero.tagline')}
               </p>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light leading-tight">
-                Digital Solutions Development
+                {t('hero.tagline2')}
               </p>
             </div>
           </div>
@@ -123,9 +126,8 @@ const Hero = ({ scrollToSection }) => {
           className="mb-10 px-4"
           variants={fadeInUp}
         >
-          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto text-center">
-            Full-Stack Developer & Data Engineer crafting innovative solutions 
-            with cutting-edge technology and modern architecture
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto text-center hero-subtitle">
+            {t('hero.subtitle')}
           </p>
         </motion.div>
 
@@ -135,9 +137,9 @@ const Hero = ({ scrollToSection }) => {
           variants={fadeInUp}
         >
           {[
-            { icon: Mail, text: 'abdullahbalisadiku@gmail.com' },
-            { icon: Phone, text: '+383 48 285002' },
-            { icon: MapPin, text: 'Gjilan, Kosovo' }
+            { icon: Mail, text: t('hero.email') },
+            { icon: Phone, text: t('hero.phone') },
+            { icon: MapPin, text: t('hero.location') }
           ].map(({ icon: Icon, text }, index) => (
             <motion.div
               key={text}
@@ -210,7 +212,7 @@ const Hero = ({ scrollToSection }) => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>Explore My Work</span>
+            <span>{t('hero.cta')}</span>
             <ArrowDown className="group-hover:translate-y-1 transition-transform duration-300" size={20} />
           </motion.button>
         </motion.div>

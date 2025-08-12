@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge.jsx';
 import { Card, CardContent } from '@/components/ui/card.jsx';
+import { useTranslation } from 'react-i18next';
 import { 
   ExternalLink, 
   Github, 
@@ -13,6 +14,8 @@ import {
 } from 'lucide-react';
 
 const Projects = () => {
+  const { t } = useTranslation();
+  
   const projects = [
     {
       title: "Al-Kurra School Management System",
@@ -125,11 +128,11 @@ const Projects = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Featured Projects
+            {t('projects.title')}
           </h2>
           <div className="w-16 h-1 mx-auto rounded-full" style={{ backgroundColor: '#00C896' }}></div>
           <p className="text-xl mt-6 text-gray-300 max-w-3xl mx-auto">
-            A showcase of innovative solutions and creative implementations
+            {t('projects.subtitle')}
           </p>
         </motion.div>
 
@@ -211,7 +214,7 @@ const Projects = () => {
                     )}
 
                     {/* Description */}
-                    <p className="text-gray-300 mb-6 leading-relaxed">
+                    <p className="text-gray-300 mb-6 leading-relaxed rtl-text">
                       {project.description}
                     </p>
 
