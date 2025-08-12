@@ -40,11 +40,11 @@ const Experience = () => {
       color: '#694E70'
     },
     {
-      title: "Data Engineering Internship - Xponina Program",
+      title: "Data Engineering Internship - Xponian Program",
       company: "XponentL Data (Genpact Company)",
       period: "February 2025 - July 2025",
       location: "Remote",
-      status: "current",
+      status: "Completed",
       description: "Participating in the comprehensive Xponina Data Engineering Program at XponentL Data, focusing on enterprise-level data pipeline development and cloud-based data solutions. Working with cutting-edge technologies to build scalable data infrastructure.",
       technologies: ["Apache Airflow", "Databricks", "SQL", "Python", "Azure Cloud", "dbt", "Neo4j", "Linux", "Data Modeling"],
       highlights: [
