@@ -88,6 +88,13 @@ const Skills = () => {
       link: "https://www.credly.com/badges/376c2f14-eb49-40ba-9671-a688b44fdd39/public_url",
       skills: ["Hardware", "Networking", "Operating Systems"],
       color: '#FFFFFF'
+    },
+    {
+      name: "Databricks Lakeflow Pre-Sales",
+      image: "images/badges/lakeflow.png",
+      link: "https://credentials.databricks.com/1649139a-001c-44e8-8410-f051b8925b08#acc.Pu1bXAnf",
+      skills: ["Lakeflow", "Databricks", "Pre-Sales", "Data Solutions"],
+      color: '#FF6B35',
     }
   ];
 

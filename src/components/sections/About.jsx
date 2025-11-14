@@ -8,6 +8,18 @@ import { useTranslation } from 'react-i18next';
 const About = () => {
   const { t } = useTranslation();
 
+  // Calculate months of Data Engineering experience (started February 2025)
+  const calculateDataEngineeringExperience = () => {
+    const startDate = new Date(2025, 1, 1); // February 2025 (month is 0-indexed)
+    const currentDate = new Date();
+    
+    const yearsDiff = currentDate.getFullYear() - startDate.getFullYear();
+    const monthsDiff = currentDate.getMonth() - startDate.getMonth();
+    const totalMonths = yearsDiff * 12 + monthsDiff;
+    
+    return totalMonths > 0 ? `${totalMonths} ${totalMonths === 1 ? 'Month' : 'Months'}` : '< 1 Month';
+  };
+
   const highlights = [
     {
       icon: Code,
@@ -19,7 +31,7 @@ const About = () => {
       icon: Database,
       title: t('about.highlights.dataEngineering.title'),
       description: t('about.highlights.dataEngineering.description'),
-      stats: t('about.highlights.dataEngineering.stats')
+      stats: calculateDataEngineeringExperience()
     },
     {
       icon: Cloud,
@@ -424,7 +436,7 @@ const About = () => {
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-white">7+</div>
+                  <div className="text-2xl font-bold text-white">8+</div>
                   <div className="text-xs text-gray-300">{t('about.stats.certs')}</div>
                 </div>
               </motion.div>
