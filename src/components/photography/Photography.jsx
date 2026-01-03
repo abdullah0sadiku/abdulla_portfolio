@@ -54,27 +54,27 @@ const Photography = () => {
   // Photo collections organized by sections
   const collections = {
     portraits: [
-      { id: 1, src: '/photography/portrait/img1.JPG', title: 'FRAME 01', desc: 'Captured the moment !!' },
-      { id: 2, src: '/photography/portrait/img2.JPG', title: 'FRAME 02', desc: 'Eyes tell stories words cannot reach.' },
-      { id: 3, src: '/photography/portrait/img3.JPG', title: 'FRAME 03', desc: 'Light shapes character. A quiet moment caught between breaths.' },
+      { id: 1, src: 'photography/portrait/img1.JPG', title: 'FRAME 01', desc: 'Captured the moment !!' },
+      { id: 2, src: 'photography/portrait/img2.JPG', title: 'FRAME 02', desc: 'Eyes tell stories words cannot reach.' },
+      { id: 3, src: 'photography/portrait/img3.JPG', title: 'FRAME 03', desc: 'Light shapes character. A quiet moment caught between breaths.' },
     ],
     landscapes: [
-      { id: 5, src: '/photography/landscape/img6.jpg', title: 'HORIZON 01', desc: 'Mountains teach patience. Dawn rewards those who wait.' },
-      { id: 6, src: '/photography/landscape/img5.jpg', title: 'HORIZON 02', desc: 'Forests hold secrets in their shadows.' },
+      { id: 5, src: 'photography/landscape/img6.jpg', title: 'HORIZON 01', desc: 'Mountains teach patience. Dawn rewards those who wait.' },
+      { id: 6, src: 'photography/landscape/img5.jpg', title: 'HORIZON 02', desc: 'Forests hold secrets in their shadows.' },
     ],
     urban: [
-      { id: 7, src: '/photography/urban/img2.JPG', title: 'CONCRETE 01', desc: 'Cities breathe. You just need to listen.' },
-      { id: 8, src: '/photography/urban/img1.jpg', title: 'CONCRETE 02', desc: 'Steel and glass, reflecting human ambition.' },
-      { id: 9, src: '/photography/urban/img3.JPG', title: 'CONCRETE 03', desc: 'Architecture as frozen music.' },
-      { id: 10, src: '/photography/urban/img4.JPG', title: 'CONCRETE 04', desc: 'The city is a canvas, and we are the artists.' },
+      { id: 7, src: 'photography/urban/img2.JPG', title: 'CONCRETE 01', desc: 'Cities breathe. You just need to listen.' },
+      { id: 8, src: 'photography/urban/img1.jpg', title: 'CONCRETE 02', desc: 'Steel and glass, reflecting human ambition.' },
+      { id: 9, src: 'photography/urban/img3.JPG', title: 'CONCRETE 03', desc: 'Architecture as frozen music.' },
+      { id: 10, src: 'photography/urban/img4.JPG', title: 'CONCRETE 04', desc: 'The city is a canvas, and we are the artists.' },
     ],
     street: [
-      { id: 15, src: '/photography/street/img15.jpg', title: 'PASSING BY', desc: 'Strangers become stories in a single frame.' },
-      { id: 16, src: '/photography/street/img16.jpg', title: 'PASSING BY', desc: 'Strangers become stories in a single frame.' },
-      { id: 17, src: '/photography/street/img17.jpg', title: 'REFLECTION', desc: 'The city mirrors its soul in glass.' },
-      { id: 18, src: '/photography/street/img18.jpg', title: 'SOLITUDE', desc: 'Alone in the crowd, yet never truly alone.' },
-      { id: 19, src: '/photography/street/img19.jpg', title: 'CROSSROADS', desc: 'Where paths intersect, moments are born.' },
-      { id: 20, src: '/photography/street/img20.jpg', title: 'CITY LIFE', desc: 'The city is a canvas, and we are the artists.' },
+      { id: 15, src: 'photography/street/img15.jpg', title: 'PASSING BY', desc: 'Strangers become stories in a single frame.' },
+      { id: 16, src: 'photography/street/img16.jpg', title: 'PASSING BY', desc: 'Strangers become stories in a single frame.' },
+      { id: 17, src: 'photography/street/img17.jpg', title: 'REFLECTION', desc: 'The city mirrors its soul in glass.' },
+      { id: 18, src: 'photography/street/img18.jpg', title: 'SOLITUDE', desc: 'Alone in the crowd, yet never truly alone.' },
+      { id: 19, src: 'photography/street/img19.jpg', title: 'CROSSROADS', desc: 'Where paths intersect, moments are born.' },
+      { id: 20, src: 'photography/street/img20.jpg', title: 'CITY LIFE', desc: 'The city is a canvas, and we are the artists.' },
     ],
     places: [
       { 

@@ -10,11 +10,29 @@ const Experience = () => {
   
   const experiences = [
     {
-      title: "Data Engineer Associate (Full-Time)",
-      company: "XponentL Data (Genpact Company)",
-      period: "February 2025 - Present",
-      location: "Remote",
+      title: "Data Engineer (Full-Time)",
+      company: "Genpact",
+      period: "January 2026 - Present",
+      location: "Remote & Kosovo",
       status: "current",
+      description: "Working as a Data Engineer, working on enterprise data pipeline orchestration using Apache Airflow 3 and Databricks Notebooks. Creating optimized SQL queries and great POCs for clients implementing transformation workflows using dbt.",
+      technologies: ["Apache Airflow", "Databricks", "SQL", "dbt", "Azure Cloud", "Python", "Linux", "Neo4j"],
+      highlights: [
+        "Promoted to full-time Data Engineer Associate position",
+        "Developed 15+ enterprise data pipelines using Apache Airflow 3",
+        "Optimized SQL queries reducing execution time by 40%",
+        "Implemented dbt transformation workflows for production systems",
+        "Collaborated with cross-functional teams on cloud architecture",
+        "Delivring projects on time and within budget"
+      ],
+      color: '#00C896'
+    },
+    {
+      title: "Data Engineer Associate (Full-Time)",
+      company: "XponentL Data",
+      period: "August 2025 - November 2025",
+      location: "Remote",
+      status: "Completed",
       description: "Started as a full-time Data Engineer Associate, working on enterprise data pipeline orchestration using Apache Airflow 3 and Databricks Notebooks. Creating optimized SQL queries and implementing transformation workflows using dbt.",
       technologies: ["Apache Airflow", "Databricks", "SQL", "dbt", "Azure Cloud", "Python", "Linux", "Neo4j"],
       highlights: [
@@ -24,14 +42,14 @@ const Experience = () => {
         "Implemented dbt transformation workflows for production systems",
         "Collaborated with cross-functional teams on cloud architecture"
       ],
-      color: '#00C896'
+      color: '#00C89E'
     },
     {
       title: "Full-Stack Web Developer",
       company: "Freelancer",
-      period: "March 2024 - Present",
+      period: "March 2024 - February 2025",
       location: "Remote",
-      status: "current",
+      status: "Completed",
       description: "Developing web applications including Al-Kurra school management platform with role-based access, online meetings via WebRTC, and comprehensive grading systems.",
       technologies: ["Laravel", "PHP", "MySQL", "WebRTC", "JavaScript", "ReactJS", "TailwindCSS", "HTML", "CSS", "Bootstrap", "Python", "Django"],
       highlights: [

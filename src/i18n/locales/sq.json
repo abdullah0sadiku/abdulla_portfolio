@@ -20,9 +20,9 @@
     "about": {
       "title": "Rreth Meje",
       "subtitle": "Zhvillues i pasionuar, krijoj zgjidhje digjitale që ndërthurin inovacionin me funksionalitetin.",
-      "description1": "Shndërroj idetë në kod funksional, me ekspertizë të thelluar në Inxhinierinë e të Dhënave, Zhvillimin Full-Stack dhe optimizimin e performancës së serverëve.",
-      "description2": "Aktualisht punoj në XponentL Data (Genpact), ku punoj në projekte të avancuara të integrimit të të dhënave duke përdorur Databricks dhe Apache Airflow dhe teknologji te tjera. Specializimi im është të ndërtoj zgjidhje të qëndrueshme që funksionojnë në çdo mjedis.",
-      "warning": "Shënim: Përdor console.log() për diagnostikim të saktë dhe festoj arritjen e objektivave kur kodi ekzekutohet me sukses.",
+      "description1": "Inxhinier i të Dhënave dhe Zhvillues Full-Stack me pasion për ndërtimin e zgjidhjeve të shkallëzueshme që transformojnë sfidat komplekse të të dhënave në njohuri të zbatueshme.",
+      "description2": "Aktualisht në Genpact, arkitektoj pipeline të qëndrueshme të dhënash me Databricks dhe Apache Airflow. Lidhj hendekun midis të dhënave të papërpunuara dhe inteligjencës së biznesit, duke ofruar zgjidhje nga infrastruktura deri te vizualizimi.",
+      "warning": "I udhëhequr nga besimi se kodi i pastër dhe të dhënat e mirëstrukturuara janë themeli i çdo produkti digjital të suksesshëm.",
       "certificationsTitle": "Certifikimet dhe Arritjet",
       "highlights": {
         "fullStack": {

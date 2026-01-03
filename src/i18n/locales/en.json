@@ -20,9 +20,9 @@
   "about": {
     "title": "About Me",
     "subtitle": "Passionate developer creating digital solutions that bridge innovation and functionality",
-    "description1": "Professional coffee-to-code converter with expertise in Data Engineering, Full-Stack Development, and Making Servers Cry.",
-    "description2": "Currently taming data monsters at XponentL Data (Genpact), where I convince Databricks and Apache Airflow to play nice together. I specialize in turning \"it works on my machine\" into \"it works everywhere\" (most of the time).",
-    "warning": "Warning: May cause excessive use of console.log() and random bursts of excitement when code actually works!",
+    "description1": "Data Engineer and Full-Stack Developer with a passion for building scalable solutions that transform complex data challenges into actionable insights.",
+    "description2": "Currently at Genpact, architecting robust data pipelines with Databricks and Apache Airflow. I bridge the gap between raw data and business intelligence, delivering end-to-end solutions from infrastructure to visualization.",
+    "warning": "Driven by the belief that clean code and well-structured data are the foundation of every successful digital product.",
     "certificationsTitle": "Certifications & Achievements",
     "highlights": {
       "fullStack": {
