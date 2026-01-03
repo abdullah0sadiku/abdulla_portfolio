@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, Camera } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import LanguageSwitcher from '../ui/language-switcher.jsx';
 
 const Navigation = ({ activeSection, scrollToSection }) => {
@@ -88,12 +89,44 @@ const Navigation = ({ activeSection, scrollToSection }) => {
                 ))}
               </div>
               
+              {/* Photography Link */}
+              <Link to="/photography">
+                <motion.div
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-300"
+                  style={{ 
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    borderColor: 'rgba(255, 255, 255, 0.15)'
+                  }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    borderColor: 'rgba(255, 255, 255, 0.25)'
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Camera size={16} className="text-gray-300" />
+                  <span className="text-sm font-medium text-gray-300">Photography</span>
+                </motion.div>
+              </Link>
+              
               {/* Language Switcher */}
               <LanguageSwitcher />
             </div>
 
             {/* Mobile Menu Button and Language Switcher */}
             <div className="lg:hidden flex items-center space-x-3">
+              <Link to="/photography">
+                <motion.div
+                  className="p-2 rounded-lg border"
+                  style={{ 
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    borderColor: 'rgba(255, 255, 255, 0.15)'
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Camera size={18} className="text-gray-300" />
+                </motion.div>
+              </Link>
               <LanguageSwitcher />
               <button
                 className="p-3 rounded-lg border transition-all duration-300"

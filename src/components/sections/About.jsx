@@ -79,436 +79,89 @@ const About = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          {/* Left Column - Images Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+          {/* Left Column - Single Profile Image */}
           <motion.div
-            className="relative"
+            className="relative flex justify-center lg:justify-start"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="flex flex-col gap-3 w-full">
-              {/* Desktop Layout */}
-              <div className="hidden md:flex gap-4">
-                {/* Left Column - Stacked closer */}
-                <div className="flex flex-col gap-2">
-                  {/* Image 1 - Top Left */}
-                  <motion.div
-                    className="z-10 group"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.05, zIndex: 20 }}
-                  >
-                    <div className="relative">
-                      {/* Glow effect */}
-                      <div 
-                        className="absolute -inset-3 rounded-xl opacity-20 blur-xl"
-                        style={{ backgroundColor: '#00C896' }}
-                      ></div>
-                      <div className="w-64 h-auto relative rounded-xl overflow-hidden bg-gray-900 shadow-2xl">
-                        <img
-                          src="images/dulla-07.jpg"
-                          alt="Abdulla Sadiku - Professional"
-                          className="w-full h-auto object-cover transition-all duration-300 group-hover:blur-sm group-hover:grayscale"
-                        />
-                        <div 
-                          className="absolute inset-0 opacity-20"
-                          style={{
-                            background: 'linear-gradient(45deg, #00C896, transparent)'
-                          }}
-                        ></div>
-                        {/* Hover Comment */}
-                        <div 
-                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4"
-                          style={{ backgroundColor: 'rgba(0, 200, 150, 0.6)' }}
-                        >
-                          <div className="text-center text-white">
-                            <h4 className="font-bold text-lg mb-2">{t('about.hoverComments.professional.title')}</h4>
-                            <p className="text-sm text-gray-200">"{t('about.hoverComments.professional.text')}"</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Image 3 - Bottom Left (Closer to top image) */}
-                  <motion.div
-                    className="z-10 group"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.05, zIndex: 20 }}
-                  >
-                    <div className="relative">
-                      <div 
-                        className="absolute -inset-3 rounded-xl opacity-25 blur-xl"
-                        style={{ backgroundColor: '#00C896' }}
-                      ></div>
-                      <div className="w-64 h-auto relative rounded-xl overflow-hidden bg-gray-900 shadow-2xl">
-                        <img
-                          src="images/dulla-09.jpg"
-                          alt="Abdulla Sadiku - Focused"
-                          className="w-full h-auto object-cover transition-all duration-300 group-hover:blur-sm group-hover:grayscale"
-                        />
-                        <div 
-                          className="absolute inset-0 opacity-20"
-                          style={{
-                            background: 'linear-gradient(225deg, #00C896, transparent)'
-                          }}
-                        ></div>
-                        {/* Hover Comment */}
-                        <div 
-                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4"
-                          style={{ backgroundColor: 'rgba(0, 200, 150, 0.6)' }}
-                        >
-                          <div className="text-center text-white">
-                            <h4 className="font-bold text-base mb-1">Deep Focus</h4>
-                            <p className="text-sm text-gray-200">"Debugging the mysteries of the universe"</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Right Column */}
-                <div className="flex flex-col gap-3">
-                  {/* Image 2 - Top Right */}
-                  <motion.div
-                    className="z-10 group"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.05, zIndex: 20 }}
-                  >
-                    <div className="relative">
-                      <div 
-                        className="absolute -inset-3 rounded-xl opacity-15 blur-xl"
-                        style={{ backgroundColor: '#00C896' }}
-                      ></div>
-                      <div className="w-56 h-auto relative rounded-xl overflow-hidden bg-gray-900 shadow-2xl">
-                        <img
-                          src="images/dulla-08.jpg"
-                          alt="Abdulla Sadiku - Creative"
-                          className="w-full h-auto object-cover transition-all duration-300 group-hover:blur-sm group-hover:grayscale"
-                        />
-                        <div 
-                          className="absolute inset-0 opacity-20"
-                          style={{
-                            background: 'linear-gradient(135deg, #00C896, transparent)'
-                          }}
-                        ></div>
-                        {/* Hover Comment */}
-                        <div 
-                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-3"
-                          style={{ backgroundColor: 'rgba(0, 200, 150, 0.6)' }}
-                        >
-                          <div className="text-center text-white">
-                            <h4 className="font-bold text-base mb-1">Creative Spark</h4>
-                            <p className="text-sm text-gray-200">"Problem-solving mode activated"</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Image 4 - Bottom Right (Landscape) */}
-                  <motion.div
-                    className="z-10 group"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.05, zIndex: 20 }}
-                  >
-                    <div className="relative">
-                      <div 
-                        className="absolute -inset-3 rounded-xl opacity-18 blur-xl"
-                        style={{ backgroundColor: '#00C896' }}
-                      ></div>
-                      <div className="w-56 h-auto relative rounded-xl overflow-hidden bg-gray-900 shadow-2xl">
-                        <img
-                          src="images/dulla-10.jpg"
-                          alt="Abdulla Sadiku - Innovative"
-                          className="w-full h-auto object-cover transition-all duration-300 group-hover:blur-sm group-hover:grayscale"
-                        />
-                        <div 
-                          className="absolute inset-0 opacity-20"
-                          style={{
-                            background: 'linear-gradient(315deg, #00C896, transparent)'
-                          }}
-                        ></div>
-                        {/* Hover Comment */}
-                        <div 
-                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4"
-                          style={{ backgroundColor: 'rgba(0, 200, 150, 0.6)' }}
-                        >
-                          <div className="text-center text-white">
-                            <h4 className="font-bold text-base mb-1">Innovation Mode</h4>
-                            <p className="text-sm text-gray-200">"Building the future, one line at a time"</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
+            <motion.div
+              className="relative group"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+            >
+              {/* Glow effect */}
+              <div 
+                className="absolute -inset-4 rounded-2xl opacity-30 blur-2xl"
+                style={{ backgroundColor: '#00C896' }}
+              ></div>
+              
+              {/* Image container */}
+              <div className="relative w-full max-w-sm md:max-w-md rounded-2xl overflow-hidden bg-gray-900 shadow-2xl">
+                <img
+                  src="images/dulla-07.jpg"
+                  alt="Abdulla Sadiku - Professional"
+                  className="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105"
+                />
+                
+                {/* Gradient overlay */}
+                <div 
+                  className="absolute inset-0 opacity-20"
+                  style={{
+                    background: 'linear-gradient(45deg, #00C896, transparent)'
+                  }}
+                ></div>
+                
+                {/* Hover overlay */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6"
+                  style={{ backgroundColor: 'rgba(0, 200, 150, 0.7)' }}
+                >
+                  <div className="text-center text-white">
+                    <h4 className="font-bold text-xl mb-2">{t('about.hoverComments.professional.title')}</h4>
+                    <p className="text-sm text-gray-100">"{t('about.hoverComments.professional.text')}"</p>
+                  </div>
                 </div>
               </div>
 
-              {/* Mobile Layout - Single Column */}
-              <div className="md:hidden flex flex-col gap-4 w-full">
-                {/* Image 1 - Mobile */}
-                <motion.div
-                  className="z-10 group w-full"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02, zIndex: 20 }}
-                >
-                  <div className="relative">
-                    <div 
-                      className="absolute -inset-3 rounded-xl opacity-20 blur-xl"
-                      style={{ backgroundColor: '#00C896' }}
-                    ></div>
-                    <div className="w-full h-auto relative rounded-xl overflow-hidden bg-gray-900 shadow-2xl">
-                      <img
-                        src="images/dulla-07.jpg"
-                        alt="Abdulla Sadiku - Professional"
-                        className="w-full h-auto object-cover transition-all duration-300 group-hover:blur-sm"
-                      />
-                      <div 
-                        className="absolute inset-0 opacity-20"
-                        style={{
-                          background: 'linear-gradient(45deg, #00C896, transparent)'
-                        }}
-                      ></div>
-                      <div 
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4"
-                        style={{ backgroundColor: 'rgba(0, 200, 150, 0.6)' }}
-                      >
-                        <div className="text-center text-white">
-                          <h4 className="font-bold text-lg mb-2">Professional Mode</h4>
-                          <p className="text-sm text-gray-200">"When the code actually works on the first try"</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Image 2 - Mobile */}
-                <motion.div
-                  className="z-10 group w-full"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02, zIndex: 20 }}
-                >
-                  <div className="relative">
-                    <div 
-                      className="absolute -inset-3 rounded-xl opacity-15 blur-xl"
-                      style={{ backgroundColor: '#00C896' }}
-                    ></div>
-                    <div className="w-full h-auto relative rounded-xl overflow-hidden bg-gray-900 shadow-2xl">
-                      <img
-                        src="images/dulla-08.jpg"
-                        alt="Abdulla Sadiku - Creative"
-                        className="w-full h-auto object-cover transition-all duration-300 group-hover:blur-sm"
-                      />
-                      <div 
-                        className="absolute inset-0 opacity-20"
-                        style={{
-                          background: 'linear-gradient(135deg, #00C896, transparent)'
-                        }}
-                      ></div>
-                      <div 
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4"
-                        style={{ backgroundColor: 'rgba(0, 200, 150, 0.6)' }}
-                      >
-                        <div className="text-center text-white">
-                          <h4 className="font-bold text-base mb-1">Creative Spark</h4>
-                          <p className="text-sm text-gray-200">"Problem-solving mode activated"</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Image 3 - Mobile */}
-                <motion.div
-                  className="z-10 group w-full"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02, zIndex: 20 }}
-                >
-                  <div className="relative">
-                    <div 
-                      className="absolute -inset-3 rounded-xl opacity-25 blur-xl"
-                      style={{ backgroundColor: '#00C896' }}
-                    ></div>
-                    <div className="w-full h-auto relative rounded-xl overflow-hidden bg-gray-900 shadow-2xl">
-                      <img
-                        src="images/dulla-09.jpg"
-                        alt="Abdulla Sadiku - Focused"
-                        className="w-full h-auto object-cover transition-all duration-300 group-hover:blur-sm"
-                      />
-                      <div 
-                        className="absolute inset-0 opacity-20"
-                        style={{
-                          background: 'linear-gradient(225deg, #00C896, transparent)'
-                        }}
-                      ></div>
-                      <div 
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4"
-                        style={{ backgroundColor: 'rgba(0, 200, 150, 0.6)' }}
-                      >
-                        <div className="text-center text-white">
-                          <h4 className="font-bold text-base mb-1">Deep Focus</h4>
-                          <p className="text-sm text-gray-200">"Debugging the mysteries of the universe"</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Image 4 - Mobile */}
-                <motion.div
-                  className="z-10 group w-full"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02, zIndex: 20 }}
-                >
-                  <div className="relative">
-                    <div 
-                      className="absolute -inset-3 rounded-xl opacity-18 blur-xl"
-                      style={{ backgroundColor: '#00C896' }}
-                    ></div>
-                    <div className="w-full h-auto relative rounded-xl overflow-hidden bg-gray-900 shadow-2xl">
-                      <img
-                        src="images/dulla-10.jpg"
-                        alt="Abdulla Sadiku - Innovative"
-                        className="w-full h-auto object-cover transition-all duration-300 group-hover:blur-sm"
-                      />
-                      <div 
-                        className="absolute inset-0 opacity-20"
-                        style={{
-                          background: 'linear-gradient(315deg, #00C896, transparent)'
-                        }}
-                      ></div>
-                      <div 
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4"
-                        style={{ backgroundColor: 'rgba(0, 200, 150, 0.6)' }}
-                      >
-                        <div className="text-center text-white">
-                          <h4 className="font-bold text-base mb-1">Innovation Mode</h4>
-                          <p className="text-sm text-gray-200">"Building the future, one line at a time"</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-
-            {/* Floating elements container */}
-            <div className="relative w-full h-20">
-
-              {/* Floating stats - repositioned */}
+              {/* Floating stats badge */}
               <motion.div
-                className="absolute bottom-4 left-4 p-4 rounded-xl border backdrop-blur-sm z-30"
+                className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 p-3 md:p-4 rounded-xl border backdrop-blur-sm z-30"
                 style={{ 
-                  backgroundColor: 'rgba(0, 200, 150, 0.1)',
+                  backgroundColor: 'rgba(19, 41, 70, 0.9)',
                   borderColor: '#00C896'
                 }}
                 animate={{ 
                   y: [0, -5, 0],
-                  rotate: [0, 2, -2, 0]
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-white">8+</div>
-                  <div className="text-xs text-gray-300">{t('about.stats.certs')}</div>
+                  <div className="text-xl md:text-2xl font-bold text-white">8+</div>
+                  <div className="text-[10px] md:text-xs text-gray-300">{t('about.stats.certs')}</div>
                 </div>
               </motion.div>
 
-              {/* Geometric Shape 1 - Circle */}
+              {/* Decorative elements */}
               <motion.div
-                className="absolute top-8 left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full z-30"
-                style={{ backgroundColor: '#00C896' }}
-                animate={{ 
-                  scale: [1, 1.3, 1],
-                  opacity: [0.7, 1, 0.7]
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+                className="absolute -top-3 -left-3 w-6 h-6 rounded-full z-20"
+                style={{ backgroundColor: '#00C896', opacity: 0.6 }}
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
               />
-
-              {/* Geometric Shape 2 - Triangle */}
               <motion.div
-                className="absolute top-1/3 right-4 z-30"
-                animate={{ 
-                  y: [0, -8, 0],
-                  rotate: [0, 180, 360]
-                }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <div 
-                  className="w-0 h-0 border-l-2 border-r-2 border-b-4 border-transparent"
-                  style={{ borderBottomColor: '#00C896' }}
-                />
-              </motion.div>
-
-              {/* Geometric Shape 3 - Circle */}
-              <motion.div
-                className="absolute bottom-1/3 right-12 w-2 h-2 rounded-full z-30"
-                style={{ backgroundColor: '#00C896' }}
-                animate={{ 
-                  x: [0, 6, -6, 0],
-                  opacity: [0.5, 1, 0.5]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+                className="absolute top-1/4 -right-2 w-3 h-3 rounded-full z-20"
+                style={{ backgroundColor: '#00C896', opacity: 0.4 }}
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity }}
               />
-
-              {/* Geometric Shape 4 - Small Triangle */}
-              <motion.div
-                className="absolute top-1/2 left-8 z-30"
-                animate={{ 
-                  rotate: [0, -90, -180, -270, -360],
-                  scale: [1, 0.8, 1.2, 0.9, 1]
-                }}
-                transition={{ 
-                  duration: 5, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <div 
-                  className="w-0 h-0 border-l-1.5 border-r-1.5 border-b-3 border-transparent"
-                  style={{ borderBottomColor: '#00C896' }}
-                />
-              </motion.div>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Column - Content */}

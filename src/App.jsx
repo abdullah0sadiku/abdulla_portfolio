@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { Routes, Route } from 'react-router-dom';
 
 // Import all modern components
 import Navigation from './components/sections/Navigation.jsx';
@@ -8,23 +8,14 @@ import About from './components/sections/About.jsx';
 import Skills from './components/sections/Skills.jsx';
 import Experience from './components/sections/Experience.jsx';
 import Projects from './components/sections/Projects.jsx';
+import Photography from './components/photography/Photography.jsx';
 
 import Contact from './components/sections/Contact.jsx';
 import Footer from './components/sections/Footer.jsx';
 
 import './App.css';
 
-function App() {
-  const [activeSection, setActiveSection] = useState('home');
-
-  // Smooth scroll to section
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+function Home({ activeSection, setActiveSection, scrollToSection }) {
   // Track active section on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -47,10 +38,10 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  
+  }, [setActiveSection]);
+
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <>
       {/* Navigation */}
       <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
       
@@ -63,6 +54,36 @@ function App() {
 
       <Contact />
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  const [activeSection, setActiveSection] = useState('home');
+
+  // Smooth scroll to section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
+  return (
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <Home 
+              activeSection={activeSection} 
+              setActiveSection={setActiveSection} 
+              scrollToSection={scrollToSection} 
+            />
+          } 
+        />
+        <Route path="/photography" element={<Photography />} />
+      </Routes>
     </div>
   );
 }
