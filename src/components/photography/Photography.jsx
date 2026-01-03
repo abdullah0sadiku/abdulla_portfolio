@@ -69,12 +69,12 @@ const Photography = () => {
       { id: 10, src: '/photography/urban/img4.JPG', title: 'CONCRETE 04', desc: 'The city is a canvas, and we are the artists.' },
     ],
     street: [
-      { id: 15, src: 'public/photography/street/img15.jpg', title: 'PASSING BY', desc: 'Strangers become stories in a single frame.' },
-      { id: 16, src: 'public/photography/street/img16.jpg', title: 'PASSING BY', desc: 'Strangers become stories in a single frame.' },
-      { id: 17, src: 'public/photography/street/img17.jpg', title: 'REFLECTION', desc: 'The city mirrors its soul in glass.' },
-      { id: 18, src: 'public/photography/street/img18.jpg', title: 'SOLITUDE', desc: 'Alone in the crowd, yet never truly alone.' },
-      { id: 19, src: 'public/photography/street/img19.jpg', title: 'CROSSROADS', desc: 'Where paths intersect, moments are born.' },
-      { id: 20, src: 'public/photography/street/img20.jpg', title: 'CITY LIFE', desc: 'The city is a canvas, and we are the artists.' },
+      { id: 15, src: '/photography/street/img15.jpg', title: 'PASSING BY', desc: 'Strangers become stories in a single frame.' },
+      { id: 16, src: '/photography/street/img16.jpg', title: 'PASSING BY', desc: 'Strangers become stories in a single frame.' },
+      { id: 17, src: '/photography/street/img17.jpg', title: 'REFLECTION', desc: 'The city mirrors its soul in glass.' },
+      { id: 18, src: '/photography/street/img18.jpg', title: 'SOLITUDE', desc: 'Alone in the crowd, yet never truly alone.' },
+      { id: 19, src: '/photography/street/img19.jpg', title: 'CROSSROADS', desc: 'Where paths intersect, moments are born.' },
+      { id: 20, src: '/photography/street/img20.jpg', title: 'CITY LIFE', desc: 'The city is a canvas, and we are the artists.' },
     ],
     places: [
       { 
@@ -83,11 +83,11 @@ const Photography = () => {
         country: 'Kosovo',
         layout: 'masonry',
         images: [
-          'public/photography/places/gjilan/img2.jpg',
-          'public/photography/places/gjilan/img3.jpg',
-          'public/photography/places/gjilan/img4.jpg',
-          'public/photography/places/gjilan/img5.jpg',
-          'public/photography/places/gjilan/img6.jpg',
+          '/photography/places/gjilan/img2.jpg',
+          '/photography/places/gjilan/img3.jpg',
+          '/photography/places/gjilan/img4.jpg',
+          '/photography/places/gjilan/img5.jpg',
+          '/photography/places/gjilan/img6.jpg',
         ]
       },
       { 
@@ -96,12 +96,12 @@ const Photography = () => {
         country: 'Kosovo',
         layout: 'editorial',
         images: [
-          'public/photography/places/prishtin/IMG_6913.JPG',
-          'public/photography/places/prishtin/APC_1317%20(1).jpg',
-          'public/photography/places/prishtin/IMG_6294.JPG',
-          'public/photography/places/prishtin/IMG_6626.JPG',
-          'public/photography/places/prishtin/IMG_6632.JPG',
-          'public/photography/places/prishtin/IMG_6866.JPG',
+          '/photography/places/prishtin/IMG_6913.JPG',
+          '/photography/places/prishtin/APC_1317%20(1).jpg',
+          '/photography/places/prishtin/IMG_6294.JPG',
+          '/photography/places/prishtin/IMG_6626.JPG',
+          '/photography/places/prishtin/IMG_6632.JPG',
+          '/photography/places/prishtin/IMG_6866.JPG',
         ]
       },
       { 
@@ -110,10 +110,10 @@ const Photography = () => {
         country: 'Germany',
         layout: 'grid',
         images: [
-          'public/photography/places/munich/APC_0147.jpg',
-          'public/photography/places/munich/APC_0168%20(1).jpg',
-          'public/photography/places/munich/IMG_3509.jpg',
-          'public/photography/places/munich/img2.JPG',
+          '/photography/places/munich/APC_0147.jpg',
+          '/photography/places/munich/APC_0168%20(1).jpg',
+          '/photography/places/munich/IMG_3509.jpg',
+          '/photography/places/munich/img2.JPG',
         ]
       },
       { 
@@ -122,26 +122,26 @@ const Photography = () => {
         country: 'Middle East',
         layout: 'scattered',
         images: [
-          'public/photography/places/saudi/APC_0394.jpg',
-          'public/photography/places/saudi/APC_0435.jpg',
-          'public/photography/places/saudi/APC_0554.jpg',
-          'public/photography/places/saudi/APC_0567%20(1).jpg',
+          '/photography/places/saudi/APC_0394.jpg',
+          '/photography/places/saudi/APC_0435.jpg',
+          '/photography/places/saudi/APC_0554.jpg',
+          '/photography/places/saudi/APC_0567%20(1).jpg',
         ]
       },
     ],
     moments: [
-      { id: 9, src: 'public/photography/moments/img9.jpg', title: 'FLEETING 01', desc: 'The sea never repeats itself.' },
-      { id: 10, src: 'public/photography/moments/img10.jpg', title: 'FLEETING 02', desc: 'Golden hour lasts minutes. Memory lasts forever.' },
-      { id: 11, src: 'public/photography/moments/img11.jpg', title: 'FLEETING 03', desc: 'Where water meets sand, time dissolves.' },
+      { id: 9, src: '/photography/moments/img9.jpg', title: 'FLEETING 01', desc: 'The sea never repeats itself.' },
+      { id: 10, src: '/photography/moments/img10.jpg', title: 'FLEETING 02', desc: 'Golden hour lasts minutes. Memory lasts forever.' },
+      { id: 11, src: '/photography/moments/img11.jpg', title: 'FLEETING 03', desc: 'Where water meets sand, time dissolves.' },
     ],
     minimalist: [
-      { id: 20, src: 'public/photography/minimalist/APC_1278.jpg', title: 'SILENCE 01' },
-      { id: 21, src: 'public/photography/minimalist/IMG_0510.jpg', title: 'SILENCE 02' },
-      { id: 22, src: 'public/photography/minimalist/IMG_0691.jpg', title: 'SILENCE 03' },
-      { id: 23, src: 'public/photography/minimalist/IMG_0694.jpg', title: 'SILENCE 04' },
-      { id: 24, src: 'public/photography/minimalist/IMG_6993.jpg', title: 'SILENCE 05' },
-      { id: 25, src: 'public/photography/minimalist/img9.jpg', title: 'SILENCE 06' },
-      { id: 26, src: 'public/photography/minimalist/IMG_0606.jpg', title: 'SILENCE 07' },
+      { id: 20, src: '/photography/minimalist/APC_1278.jpg', title: 'SILENCE 01' },
+      { id: 21, src: '/photography/minimalist/IMG_0510.jpg', title: 'SILENCE 02' },
+      { id: 22, src: '/photography/minimalist/IMG_0691.jpg', title: 'SILENCE 03' },
+      { id: 23, src: '/photography/minimalist/IMG_0694.jpg', title: 'SILENCE 04' },
+      { id: 24, src: '/photography/minimalist/IMG_6993.jpg', title: 'SILENCE 05' },
+      { id: 25, src: '/photography/minimalist/img9.jpg', title: 'SILENCE 06' },
+      { id: 26, src: '/photography/minimalist/IMG_0606.jpg', title: 'SILENCE 07' },
     ],
   };
 
@@ -222,7 +222,7 @@ const Photography = () => {
             transition={{ duration: 1, delay: 0.3 }}
           >
             <img
-              src="public/photography/me.jpg"
+              src="/photography/me.jpg"
               alt="Cover"
               className="w-full h-full object-cover"
               style={{ filter: 'grayscale(20%)' }}
